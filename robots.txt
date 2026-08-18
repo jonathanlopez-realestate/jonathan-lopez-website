@@ -1,0 +1,34 @@
+# Jonathan Lopez — Your Woodland Hills Agent
+# Explicitly allow all crawlers, including AI crawlers, per the known trap
+# documented in AI_Search_GEO_SOP.md (Step 2.5): some website builders run
+# Cloudflare security settings turned up so high that they silently block
+# Google and AI crawlers from reading the site at all. Confirm with whoever
+# hosts this site that none of the crawlers below are being blocked at the
+# CDN/firewall level, this file alone does not override a host-level block.
+
+User-agent: *
+Allow: /
+
+# Common AI crawlers, explicitly allowed (not just left to the default above)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://REPLACE-WITH-DOMAIN.com/sitemap.xml
