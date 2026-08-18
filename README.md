@@ -72,6 +72,15 @@ Jonathan asked specifically for confidence nothing breaks once this goes live. E
 - The domain/host decision itself.
 - Confirming with his brokerage whether AI-content disclosure is required (see `AI_Search_GEO_SOP.md` Step 4).
 
+## Brand Colors (set 2026-08-17)
+
+Jonathan confirmed real brand colors, replacing the placeholder green scheme every page had been built with unreviewed:
+- Deep Navy `#0B1F33` (primary, `--brand`/`--ink`)
+- Warm White `#F8F6F2` (page background, `--bg`)
+- Soft Gold `#C9A24D` (accent only, `--gold`) — used sparingly: link-hover underline color, FAQ item left border, disclaimer box left border. Not used as a background or button color anywhere, by design.
+
+All colors live as CSS variables in `style.css`, so this was a single-file update that rethemed every page. Logo: Jonathan has a navy/gold-framed "JL" monogram wordmark logo (navy square, warm-white serif JL, thin gold border) that matches this palette exactly. He shared it as an image in chat, but Claude can't pull the actual image bytes out of a chat-embedded image into a file, so the header still uses a text wordmark until Jonathan sends the logo as an actual file upload (drag into chat or save to this folder), at which point swap `<a class="brand">Jonathan Lopez</a>` for an `<img>` across all pages and use it for `/assets/og-image.jpg` and a favicon too.
+
 ## Rules Carried Over From the Rest of the Content System
 
 - Woodland Hills leads every page/post opening — see `AI_Search_GEO_SOP.md` Rule #0.
