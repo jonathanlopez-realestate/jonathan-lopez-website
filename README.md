@@ -28,12 +28,11 @@ Every page now carries, in addition to its per-page JSON-LD schema:
 
 `sitemap.xml` and `robots.txt` are built and sitting in this folder, ready to go live the moment there's a real domain. `robots.txt` explicitly allows GPTBot, ChatGPT-User, Google-Extended, PerplexityBot, ClaudeBot, anthropic-ai, and CCBot by name, not just the wildcard, since the known Cloudflare-blocking-crawlers trap (see `AI_Search_GEO_SOP.md` Step 2.5) means this needs to be double-checked against whatever host/CDN is chosen, this file alone doesn't override a host-level block.
 
-**Still open:** `og:image` on every page currently points to a placeholder path (`/assets/og-image.jpg`) that doesn't exist yet, needs a real headshot/logo image before launch. See `AI_Search_GEO_SOP.md` Step 4 for the full list of what was checked, what was added, and what's genuinely unclear (AI-content-disclosure rules, review schema) rather than assumed.
+`og:image`, favicon, and header logo are now real assets (see Brand Colors / Logo section above), not placeholders. See `AI_Search_GEO_SOP.md` Step 4 for the full list of what was checked, what was added, and what's genuinely unclear (AI-content-disclosure rules, review schema) rather than assumed.
 
 ## Not Yet Built (next up, one at a time per Jonathan's pace)
 
 - Blog pages for the remaining `Content_*.md` files already drafted (Zestimate accuracy, price-cut/pricing, and whatever the automated weekday drafts produce)
-- Real `og-image.jpg` asset (headshot or logo, 1200x630)
 
 ## How to Deploy When Ready (no ongoing cost beyond the domain)
 
@@ -68,7 +67,6 @@ Jonathan asked specifically for confidence nothing breaks once this goes live. E
 - "Friday" AI assistant, "Agent Vault" persistent memory, the cross-subscriber backlink network, the multi-LLM inference tool, auto-connection to a CRM like Follow Up Boss. These only work inside AgentSpotlight's paid platform and don't have a free DIY equivalent. Listed here so it's clear they were reviewed and intentionally skipped, not missed. Full reasoning in `00_Coaching_and_Training/Office_Training_Log.md`.
 
 **Still needs Jonathan, not a backend item:**
-- A real photo for `og:image`.
 - The domain/host decision itself.
 - Confirming with his brokerage whether AI-content disclosure is required (see `AI_Search_GEO_SOP.md` Step 4).
 
@@ -79,7 +77,9 @@ Jonathan confirmed real brand colors, replacing the placeholder green scheme eve
 - Warm White `#F8F6F2` (page background, `--bg`)
 - Soft Gold `#C9A24D` (accent only, `--gold`) — used sparingly: link-hover underline color, FAQ item left border, disclaimer box left border. Not used as a background or button color anywhere, by design.
 
-All colors live as CSS variables in `style.css`, so this was a single-file update that rethemed every page. Logo: Jonathan has a navy/gold-framed "JL" monogram wordmark logo (navy square, warm-white serif JL, thin gold border) that matches this palette exactly. He shared it as an image in chat, but Claude can't pull the actual image bytes out of a chat-embedded image into a file, so the header still uses a text wordmark until Jonathan sends the logo as an actual file upload (drag into chat or save to this folder), at which point swap `<a class="brand">Jonathan Lopez</a>` for an `<img>` across all pages and use it for `/assets/og-image.jpg` and a favicon too.
+All colors live as CSS variables in `style.css`, so this was a single-file update that rethemed every page.
+
+**Logo (added 2026-08-17):** Jonathan's real navy/gold-framed "JL" monogram logo is now in `assets/` (`logo.jpg` original, `logo.png` for the header) and wired into all 8 pages' header, replacing the plain text wordmark (text still shows next to it for clarity, since "JL" alone doesn't spell out the name to a first-time visitor). Also generated from it: `assets/favicon.ico` (16/32/48px) linked in every page's `<head>`, and `assets/og-image.jpg` (1200x630, logo centered on navy) replacing the placeholder path every page's Open Graph/Twitter meta tags already pointed to. Nothing left open on branding assets.
 
 ## Rules Carried Over From the Rest of the Content System
 

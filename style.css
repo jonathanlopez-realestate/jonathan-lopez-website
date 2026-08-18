@@ -45,6 +45,16 @@ a:hover { text-decoration: underline; text-decoration-color: var(--gold); text-d
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  height: 34px;
+  width: 34px;
+  border-radius: 4px;
+  display: block;
 }
 
 .brand-tag {
