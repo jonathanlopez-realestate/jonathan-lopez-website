@@ -1,6 +1,6 @@
-# Website Prep — Not Live Yet
+# Website Prep — Live on a free Cloudflare subdomain, custom domain not yet connected
 
-**Status:** Content and schema built, zero cost, no domain purchased. Ready to deploy the moment Jonathan wants to spend the ~$15/year on a domain.
+**Status (updated 2026-08-17):** Site is deployed and live at https://jonathan-lopez-website.pages.dev via Cloudflare Pages, connected to the `jonathanlopez-realestate/jonathan-lopez-website` GitHub repo (main branch). Every push to `main` auto-deploys within about a minute, no manual redeploy step. Real brand colors and logo are live (see below). Only remaining step to go fully live on Jonathan's own domain: he buys a domain (~$12-15/yr) and it gets connected under Cloudflare Pages > Custom domains, then all `REPLACE-WITH-DOMAIN.com` placeholders in the code get swapped for the real domain.
 
 ---
 
