@@ -201,6 +201,25 @@ article.post h2 {
   color: var(--ink);
 }
 
+.post-cta {
+  margin: 32px 0;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  background: var(--brand-light);
+  border-radius: 8px;
+}
+
+.post-cta p {
+  margin: 0 0 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.post-cta .cta-row {
+  margin-top: 0;
+}
+
 /* Contact form */
 .contact-form {
   max-width: 520px;
