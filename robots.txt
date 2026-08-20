@@ -31,4 +31,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://REPLACE-WITH-DOMAIN.com/sitemap.xml
+Sitemap: https://jonathanlopezrealestate.com/sitemap.xml

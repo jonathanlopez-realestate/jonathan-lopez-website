@@ -1,6 +1,8 @@
-# Website Prep — Live on a free Cloudflare subdomain, custom domain not yet connected
+# Website Prep — Live at jonathanlopezrealestate.com
 
-**Status (updated 2026-08-17):** Site is deployed and live at https://jonathan-lopez-website.pages.dev via Cloudflare Pages, connected to the `jonathanlopez-realestate/jonathan-lopez-website` GitHub repo (main branch). Every push to `main` auto-deploys within about a minute, no manual redeploy step. Real brand colors and logo are live (see below). Only remaining step to go fully live on Jonathan's own domain: he buys a domain (~$12-15/yr) and it gets connected under Cloudflare Pages > Custom domains, then all `REPLACE-WITH-DOMAIN.com` placeholders in the code get swapped for the real domain.
+**Status (updated 2026-08-19):** Domain `jonathanlopezrealestate.com` purchased through Cloudflare Registrar (at-cost, $10.46/yr, auto-renew on) and connected under the `jonathan-lopez-website` Cloudflare Pages project's Custom domains. Every `REPLACE-WITH-DOMAIN.com` placeholder across every HTML page, `sitemap.xml`, and `robots.txt` has been replaced with the real domain. Site still auto-deploys on every push to `main` via the `jonathanlopez-realestate/jonathan-lopez-website` GitHub repo, usually within about a minute. Real brand colors and logo are live (see below). Fallback/original URL `https://jonathan-lopez-website.pages.dev` still works and points to the same deployment.
+
+**A2P 10DLC / Follow Up Boss texting compliance (added 2026-08-19):** Built `privacy-policy.html` and `contact.html` after Jonathan's Business Registration in FUB came back "Corrections Needed" for two reasons: no privacy policy link anywhere on the site, and the opt-in disclaimer using "Jonathan Lopez" instead of the legal business name on file ("JONATHAN LEOBARDO LOPEZ"). Both fixed: `contact.html` has a working lead form (name, phone, email, message) with an optional (not required, per FUB/TCR rule that SMS opt-in can never be a required condition of form submission) SMS opt-in checkbox using FUB's exact required language and the correct legal name, linking to `privacy-policy.html`. The privacy policy includes the required "data will not be sold or shared with third parties for marketing or promotional purposes" statement and the full 6-point SMS Terms and Conditions block FUB requires verbatim. Form submissions route through FormSubmit.co straight to jonathanlopez.agent@gmail.com, zero signup/API key required, just a one-time confirmation email Jonathan needs to click before the first real lead comes through. Both new pages are linked in the nav/footer of every page on the site. Not yet built: direct FUB API integration (`/v1/events` endpoint) to auto-create contacts from form submissions instead of just emailing them, deliberately deferred since it requires Jonathan to generate a System Key and personal API Key and isn't needed to pass Business Registration review, only to skip a manual copy-paste step later.
 
 ---
 
@@ -68,8 +70,8 @@ Jonathan asked specifically for confidence nothing breaks once this goes live. E
 - "Friday" AI assistant, "Agent Vault" persistent memory, the cross-subscriber backlink network, the multi-LLM inference tool, auto-connection to a CRM like Follow Up Boss. These only work inside AgentSpotlight's paid platform and don't have a free DIY equivalent. Listed here so it's clear they were reviewed and intentionally skipped, not missed. Full reasoning in `00_Coaching_and_Training/Office_Training_Log.md`.
 
 **Still needs Jonathan, not a backend item:**
-- The domain/host decision itself.
 - Confirming with his brokerage whether AI-content disclosure is required (see `AI_Search_GEO_SOP.md` Step 4).
+- Once the FUB "Corrections Needed" review clears: check Business Registration status again in a day or two after resubmitting with the new privacy-policy.html/contact.html URLs.
 
 ## Brand Colors (set 2026-08-17)
 
