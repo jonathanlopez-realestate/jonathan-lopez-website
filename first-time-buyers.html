@@ -117,6 +117,16 @@
   ]
 }
 </script>
+<!-- begin deferred FUB Widget Tracker Code -->
+<script>
+function initFubPixel() {
+  if (window.fubPixelIntialized) return !1;
+  window.fubPixelIntialized = !0;
+  (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function() {(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"), (t=d.createElement(e)),(e=d.getElementsByTagName(e)[0]);t.async=1;t.src=i; e.parentNode.insertBefore(t,e);}) (window,"https://widgetbe.com/agent",document,"widgetTracker"); window.widgetTracker("create", "WT-EPCMDKOU"); window.widgetTracker("send", "pageview");
+}
+function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListener(e.type,initFubPixelOnEvent)}document.addEventListener("DOMContentLoaded",function(){setTimeout(initFubPixel,3500)}),document.addEventListener("scroll",initFubPixelOnEvent),document.addEventListener("mousemove",initFubPixelOnEvent),document.addEventListener("touchstart",initFubPixelOnEvent);
+</script>
+<!-- end deferred FUB Widget Tracker Code -->
 </head>
 <body>
 
