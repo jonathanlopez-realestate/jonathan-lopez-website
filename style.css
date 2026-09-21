@@ -164,6 +164,14 @@ article.post h1 {
   margin-bottom: 28px;
 }
 
+.post-hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 0 28px;
+  display: block;
+}
+
 article.post h2 {
   margin-top: 34px;
   font-size: 1.3rem;
