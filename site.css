@@ -150,3 +150,7 @@ main{position:relative;isolation:isolate}
 .about-portrait{margin:0;min-width:0;display:flex;align-items:end;justify-content:center}
 .about-portrait img{display:block;width:min(100%,480px);height:auto;max-height:560px;object-fit:contain;object-position:bottom}
 @media(max-width:710px){.about-teaser{padding-top:68px;padding-bottom:0}.about-inner{display:flex;flex-direction:column;align-items:stretch;gap:8px}.about-copy{padding-bottom:24px}.about-portrait img{width:min(100%,360px);max-height:none}.about-teaser h2{font-size:clamp(42px,11vw,54px)}}
+.idx-frame{height:900px;margin:24px 0 12px;border:1px solid var(--line,#e2ddd3);border-radius:8px;overflow:hidden}
+.idx-frame iframe{display:block;width:100%;height:100%;border:0}
+.idx-note{font-size:11px;line-height:1.5;color:var(--muted)}
+@media(max-width:700px){.idx-frame{height:700px}}
