@@ -26,39 +26,179 @@
 <link rel="stylesheet" href="/site.css">
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": "RealEstateAgent",
-"name": "Jonathan Lopez",
-"alternateName": "Jonathan Lopez — Your Woodland Hills Agent",
-"url": "https://jonathanlopezrealestate.com/",
-"telephone": "+1-818-934-7576",
-"areaServed": [
-{"@type": "City", "name": "Woodland Hills, CA"},
-{"@type": "City", "name": "Encino, CA"},
-{"@type": "City", "name": "Tarzana, CA"},
-{"@type": "City", "name": "Calabasas, CA"},
-{"@type": "City", "name": "Northridge, CA"}
-],
-"address": {
-"@type": "PostalAddress",
-"addressLocality": "Woodland Hills",
-"addressRegion": "CA",
-"postalCode": "91367",
-"addressCountry": "US"
-},
-"worksFor": {
-"@type": "Organization",
-"name": "Jim Sandoval Group"
-},
-"identifier": "CA DRE #02282844",
-"sameAs": [
-"https://www.instagram.com/jonathanyouragent",
-"https://www.tiktok.com/@jonathanyouragent",
-"https://www.youtube.com/@jonathanlopezrealtor",
-"https://www.realtor.com/realestateagents/69157d45bded295fb175032f",
-"https://www.homes.com/real-estate-agents/jonathan-lopez/l1rfdse/",
-"https://www.linkedin.com/in/jonathan-lopez-6b7350411"
-]
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "RealEstateAgent",
+    "LocalBusiness"
+   ],
+   "@id": "https://jonathanlopezrealestate.com/#business",
+   "name": "Jonathan Lopez — Your Woodland Hills Agent",
+   "url": "https://jonathanlopezrealestate.com/",
+   "logo": "https://jonathanlopezrealestate.com/assets/logo.png",
+   "image": "https://jonathanlopezrealestate.com/assets/og-image.jpg",
+   "description": "Residential real estate agent in Woodland Hills, CA 91367 serving buyers and sellers in the San Fernando Valley, with a focus on home sellers.",
+   "telephone": "+1-818-934-7576",
+   "email": "jonathanlopez.agent@gmail.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Woodland Hills",
+    "addressRegion": "CA",
+    "postalCode": "91367",
+    "addressCountry": "US"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.1684,
+    "longitude": -118.6059
+   },
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "Woodland Hills, CA"
+    },
+    {
+     "@type": "Place",
+     "name": "91367 (Woodland Hills, CA)"
+    },
+    {
+     "@type": "City",
+     "name": "Tarzana, CA"
+    },
+    {
+     "@type": "City",
+     "name": "Encino, CA"
+    },
+    {
+     "@type": "City",
+     "name": "Calabasas, CA"
+    },
+    {
+     "@type": "City",
+     "name": "Northridge, CA"
+    },
+    {
+     "@type": "Place",
+     "name": "San Fernando Valley, CA"
+    }
+   ],
+   "founder": {
+    "@id": "https://jonathanlopezrealestate.com/#person"
+   },
+   "employee": {
+    "@id": "https://jonathanlopezrealestate.com/#person"
+   },
+   "parentOrganization": {
+    "@type": "Organization",
+    "name": "Park Regency Realty"
+   },
+   "sameAs": [
+    "https://www.instagram.com/jonathanyouragent",
+    "https://www.tiktok.com/@jonathanyouragent",
+    "https://www.youtube.com/@jonathanlopezrealtor",
+    "https://www.realtor.com/realestateagents/69157d45bded295fb175032f",
+    "https://www.homes.com/real-estate-agents/jonathan-lopez/l1rfdse/",
+    "https://www.linkedin.com/in/jonathan-lopez-6b7350411"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://jonathanlopezrealestate.com/#person",
+   "name": "Jonathan Lopez",
+   "jobTitle": "Real Estate Agent",
+   "url": "https://jonathanlopezrealestate.com/about.html",
+   "telephone": "+1-818-934-7576",
+   "email": "jonathanlopez.agent@gmail.com",
+   "image": "https://jonathanlopezrealestate.com/assets/logo.png",
+   "worksFor": [
+    {
+     "@type": "Organization",
+     "name": "Jim Sandoval Group",
+     "url": "https://jimsandovalgroup.com/"
+    },
+    {
+     "@type": "Organization",
+     "name": "Park Regency Realty"
+    }
+   ],
+   "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "license",
+    "name": "California DRE License #02282844",
+    "recognizedBy": {
+     "@type": "Organization",
+     "name": "California Department of Real Estate"
+    }
+   },
+   "identifier": "CA DRE #02282844",
+   "workLocation": {
+    "@id": "https://jonathanlopezrealestate.com/#business"
+   },
+   "sameAs": [
+    "https://www.instagram.com/jonathanyouragent",
+    "https://www.tiktok.com/@jonathanyouragent",
+    "https://www.youtube.com/@jonathanlopezrealtor",
+    "https://www.realtor.com/realestateagents/69157d45bded295fb175032f",
+    "https://www.homes.com/real-estate-agents/jonathan-lopez/l1rfdse/",
+    "https://www.linkedin.com/in/jonathan-lopez-6b7350411"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://jonathanlopezrealestate.com/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Who is a good real estate agent in Woodland Hills?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Jonathan Lopez is a residential real estate agent in Woodland Hills, CA 91367 with the Jim Sandoval Group at Park Regency Realty (CA DRE #02282844). He works with buyers and sellers across the San Fernando Valley, with a focus on helping Woodland Hills homeowners sell. You can reach him at (818) 934-7576."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I find out what my Woodland Hills home is worth?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Online estimates like a Zestimate are a starting point, not a price. The most reliable answer comes from comparing your home with recent nearby sales of similar size, condition, and location. Jonathan prepares a home valuation based on real Woodland Hills comps. Call (818) 934-7576 or use the contact page to request one."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long do homes take to sell in 91367?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "According to Redfin, homes in Woodland Hills sold after a median of 47 days on the market over the three months ending September 2026, compared to 59 days a year earlier. Timing for any one home depends on its price, condition, and location."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What are homes selling for in Woodland Hills right now?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Redfin reports a median sale price of $1,215,659 in Woodland Hills over the three months ending September 2026, up 0.2% from a year earlier. Homes sold for about 99.0% of list price on average. Because the median mixes condos, townhomes, and houses, your own home's value is best judged against similar nearby sales."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is now a good time to sell my Woodland Hills home?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on your goals and your home. Redfin rates Woodland Hills as somewhat competitive as of September 2026: some homes get multiple offers, while about a third of listings had a price drop. Pricing correctly from day one matters. Jonathan can walk you through the current numbers for your street."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you work with buyers too, or only sellers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Both. Jonathan focuses on sellers but also represents buyers, including first-time buyers, across Woodland Hills, Tarzana, Encino, Calabasas, and the rest of the San Fernando Valley."
+     }
+    }
+   ]
+  }
+ ]
 }
 </script>
 <!-- begin deferred FUB Widget Tracker Code -->
@@ -144,6 +284,19 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 <p class="about-credential">Jim Sandoval Group · CA DRE #02282844</p>
 <a href="about.html">Get to know Jonathan →</a>
 </div>
+</div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-title">
+<div class="faq-inner">
+<h2 id="faq-title">Woodland Hills Seller FAQ</h2>
+<details class="faq-item"><summary>Who is a good real estate agent in Woodland Hills?</summary><p>Jonathan Lopez is a residential real estate agent in Woodland Hills, CA 91367 with the Jim Sandoval Group at Park Regency Realty (CA DRE #02282844). He works with buyers and sellers across the San Fernando Valley, with a focus on helping Woodland Hills homeowners sell. You can reach him at (818) 934-7576.</p></details>
+<details class="faq-item"><summary>How do I find out what my Woodland Hills home is worth?</summary><p>Online estimates like a Zestimate are a starting point, not a price. The most reliable answer comes from comparing your home with recent nearby sales of similar size, condition, and location. Jonathan prepares a home valuation based on real Woodland Hills comps. Call (818) 934-7576 or use the contact page to request one.</p></details>
+<details class="faq-item"><summary>How long do homes take to sell in 91367?</summary><p>According to Redfin, homes in Woodland Hills sold after a median of 47 days on the market over the three months ending September 2026, compared to 59 days a year earlier. Timing for any one home depends on its price, condition, and location.</p></details>
+<details class="faq-item"><summary>What are homes selling for in Woodland Hills right now?</summary><p>Redfin reports a median sale price of $1,215,659 in Woodland Hills over the three months ending September 2026, up 0.2% from a year earlier. Homes sold for about 99.0% of list price on average. Because the median mixes condos, townhomes, and houses, your own home&#x27;s value is best judged against similar nearby sales.</p></details>
+<details class="faq-item"><summary>Is now a good time to sell my Woodland Hills home?</summary><p>It depends on your goals and your home. Redfin rates Woodland Hills as somewhat competitive as of September 2026: some homes get multiple offers, while about a third of listings had a price drop. Pricing correctly from day one matters. Jonathan can walk you through the current numbers for your street.</p></details>
+<details class="faq-item"><summary>Do you work with buyers too, or only sellers?</summary><p>Both. Jonathan focuses on sellers but also represents buyers, including first-time buyers, across Woodland Hills, Tarzana, Encino, Calabasas, and the rest of the San Fernando Valley.</p></details>
+<p class="faq-source">Market figures: <a href="https://www.redfin.com/neighborhood/10848/CA/Los-Angeles/Woodland-Hills/housing-market" target="_blank" rel="noopener noreferrer">Redfin Woodland Hills housing market</a>, three months ending September 2026.</p>
 </div>
 </section>
 
