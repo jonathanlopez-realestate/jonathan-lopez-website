@@ -36,19 +36,26 @@
 <section class="hv-hero"><div class="hv-wrap">
 <h1>What's your <em>Woodland Hills</em> home worth?</h1>
 <p class="hv-sub">Free, personal estimate from a local agent within 24 hours. <strong>Not a Zestimate.</strong></p>
-<form class="contact-form" action="https://formsubmit.co/jonathanlopez.agent@gmail.com" method="POST">
-  <input type="hidden" name="_subject" value="Home value request – Farm W">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" id="fs-next" value="https://jonathanlopezrealestate.com/thank-you">
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+  <input type="hidden" name="subject" value="Home value request – Farm W">
+  <input type="hidden" name="from_name" value="Jonathan Lopez Real Estate Website">
+  <input type="hidden" name="redirect" id="fs-next" value="https://jonathanlopezrealestate.com/thank-you">
   <script>document.getElementById('fs-next').value=window.location.origin+'/thank-you';</script>
   <input type="hidden" name="farm" value="W">
   <input type="hidden" name="source" value="Door knocker QR - Farm W">
-  <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off">
-  <div class="form-field"><label for="address">Property address *</label><input type="text" id="address" name="Property Address" placeholder="1234 Your St, Woodland Hills" autocomplete="street-address" required></div>
-  <div class="form-field"><label for="contact">Phone or email *</label><input type="text" id="contact" name="Phone or Email" placeholder="(818) 555-0123 or you@email.com" required></div>
+  <input type="checkbox" name="botcheck" class="honeypot-field" tabindex="-1" autocomplete="off" style="display:none">
+  <div class="form-field"><label for="street">Street address *</label><input type="text" id="street" name="Property Address" placeholder="1234 Your St" autocomplete="address-line1" required></div>
+  <div class="form-field"><label for="city">City *</label><input type="text" id="city" name="City" value="Woodland Hills" autocomplete="address-level2" required></div>
+  <div class="form-field"><label for="zip">ZIP *</label><input type="text" id="zip" name="ZIP" value="91367" inputmode="numeric" pattern="\d{5}" maxlength="5" title="5-digit ZIP" autocomplete="postal-code" required></div>
+  <input type="hidden" id="addr-full">
+  <div class="form-field"><label for="name">Full name *</label><input type="text" id="name" name="Full Name" placeholder="Your full name" autocomplete="name" required></div>
+  <div class="form-field"><label for="email">Email address *</label><input type="email" id="email" name="Email Address" placeholder="you@email.com" autocomplete="email" required></div>
+  <div class="form-field"><label for="phone">Phone number *</label><input type="tel" id="phone" name="Phone Number" placeholder="(818) 555-0123" autocomplete="tel" required></div>
+  <script>document.currentScript.closest('form').addEventListener('submit',function(){var s=document.getElementById('street'),h=document.getElementById('addr-full'),c=document.getElementById('city').value.trim(),z=document.getElementById('zip').value.trim();h.value=s.value.trim()+', '+c+', CA '+z;h.name='Property Address';s.removeAttribute('name');});</script>
   <button type="submit" class="btn">Get My Home Value</button>
 </form>
+<script>(function(){var f=document.currentScript.previousElementSibling;if(!f||!window.fetch)return;var m=document.createElement('p');m.className='form-error';m.setAttribute('role','alert');m.style.cssText='display:none;margin:12px 0 0;color:#a33;font-size:15px';f.appendChild(m);f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button[type=submit]'),t=b.textContent,r=f.querySelector('[name=redirect]');m.style.display='none';b.disabled=true;b.textContent='Sending...';fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}).then(function(x){return x.json().catch(function(){return{}}).then(function(j){if(!x.ok||j.success===false)throw 0;window.location.href=r?r.value:'/thank-you';});}).catch(function(){b.disabled=false;b.textContent=t;m.innerHTML='Sorry, something went wrong sending your request. Please try again, or call or text Jonathan at <a href="tel:8189347576">(818) 934-7576</a>.';m.style.display='block';});});})();</script>
 </div></section>
 <div class="hv-wrap">
 <div class="hv-actions"><a class="btn btn-dark" href="tel:8189347576">Call 818.934.7576</a><a class="btn btn-line" href="sms:8189347576">Text 818.934.7576</a></div>

@@ -52,11 +52,13 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 
 <p>Have a question about buying, selling, or valuing a home in Woodland Hills or the surrounding San Fernando Valley? Fill out the form below and Jonathan will follow up directly, or call <a href="tel:8189347576">(818) 934-7576</a> now.</p>
 
-<form class="contact-form" action="https://formsubmit.co/jonathanlopez.agent@gmail.com" method="POST">
-  <input type="hidden" name="_subject" value="New website contact form submission">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off">
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+  <input type="hidden" name="subject" value="New website contact form submission">
+  <input type="hidden" name="from_name" value="Jonathan Lopez Real Estate Website">
+  <input type="hidden" name="redirect" id="fs-next" value="https://jonathanlopezrealestate.com/thank-you">
+  <script>document.getElementById('fs-next').value=window.location.origin+'/thank-you';</script>
+  <input type="checkbox" name="botcheck" class="honeypot-field" tabindex="-1" autocomplete="off" style="display:none">
 
   <div class="form-field">
     <label for="name">Name *</label>
@@ -85,6 +87,7 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 
   <button type="submit" class="btn">Send Message</button>
 </form>
+<script>(function(){var f=document.currentScript.previousElementSibling;if(!f||!window.fetch)return;var m=document.createElement('p');m.className='form-error';m.setAttribute('role','alert');m.style.cssText='display:none;margin:12px 0 0;color:#a33;font-size:15px';f.appendChild(m);f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button[type=submit]'),t=b.textContent,r=f.querySelector('[name=redirect]');m.style.display='none';b.disabled=true;b.textContent='Sending...';fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}).then(function(x){return x.json().catch(function(){return{}}).then(function(j){if(!x.ok||j.success===false)throw 0;window.location.href=r?r.value:'/thank-you';});}).catch(function(){b.disabled=false;b.textContent=t;m.innerHTML='Sorry, something went wrong sending your request. Please try again, or call or text Jonathan at <a href="tel:8189347576">(818) 934-7576</a>.';m.style.display='block';});});})();</script>
 
 <p style="margin-top:28px;">Prefer to call? Reach Jonathan directly at <a href="tel:8189347576">(818) 934-7576</a>.</p>
 
