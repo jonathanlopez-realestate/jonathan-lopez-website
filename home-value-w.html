@@ -52,7 +52,6 @@
   <input type="hidden" id="addr-full">
   <div class="form-field"><label for="name">Full name *</label><input type="text" id="name" name="Full Name" placeholder="Your full name" autocomplete="name" required></div>
   <div class="form-field"><label for="email">Email address *</label><input type="email" id="email" name="Email Address" placeholder="you@email.com" autocomplete="email" required></div>
-  <div class="form-field"><label for="phone">Phone number *</label><input type="tel" id="phone" name="Phone Number" placeholder="(818) 555-0123" autocomplete="tel" required></div>
   <script>document.currentScript.closest('form').addEventListener('submit',function(){var s=document.getElementById('street'),h=document.getElementById('addr-full'),c=document.getElementById('city').value.trim(),z=document.getElementById('zip').value.trim();h.value=s.value.trim()+', '+c+', CA '+z;h.name='Property Address';s.removeAttribute('name');});</script>
   <button type="submit" class="btn">Get My Home Value</button>
 </form>
