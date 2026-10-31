@@ -38,7 +38,7 @@
 <p class="hv-sub">Free personal estimate from your local real estate agent — <strong>not a Zestimate.</strong></p>
 <style>
 .ms-progress{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink);margin:0 0 6px}
-.ms-bar{display:flex;gap:6px;margin:0 0 20px}.ms-bar span{flex:1;height:4px;border-radius:2px;background:#d8d4c8}.ms-bar span.on{background:var(--gold-light,#c9a96e)}
+.ms-bar{height:4px;border-radius:2px;background:#e6e2d8;margin:0 0 20px;overflow:hidden}.ms-bar span{display:block;height:100%;width:30%;background:var(--gold-light,#c9a96e);transition:width .4s}.ms-thanks{font-size:16px;font-weight:700;color:var(--gold-ink);margin:0 0 6px}
 .ms-step[hidden]{display:none}.ms-step h2{font-size:24px;margin:0 0 8px}.ms-note{font-size:15px;margin:0 0 18px}
 .ms-skip{display:block;margin-top:14px;font-size:14px;color:inherit;text-decoration:underline;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
 </style>
@@ -52,8 +52,7 @@
   <input type="hidden" name="source" value="Door knocker QR - Farm C">
   <textarea name="Message" id="fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0">Door knocker QR - Farm C (farm: C)</textarea>
   <input type="checkbox" name="botcheck" class="honeypot-field" tabindex="-1" autocomplete="off" style="display:none">
-  <p class="ms-progress" id="ms-label" aria-live="polite">Step 1 of 3</p>
-  <div class="ms-bar" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+  <div class="ms-bar" aria-hidden="true"><span id="ms-fill"></span></div>
   <div class="ms-step" data-step="1">
     <div class="form-field"><label for="street">Street address *</label><input type="text" id="street" name="Street" placeholder="1234 Your St" autocomplete="address-line1" required></div>
     <div class="form-field"><label for="city">City *</label><input type="text" id="city" name="City" value="Woodland Hills" autocomplete="address-level2" required></div>
@@ -63,26 +62,27 @@
   </div>
   <div class="ms-step" data-step="2" hidden>
     <h2>You're so close to your value report!</h2>
+    <div class="form-field"><label for="name">Full name *</label><input type="text" id="name" name="Full Name" placeholder="Your full name" autocomplete="name" required></div>
     <div class="form-field"><label for="email">Email address *</label><input type="email" id="email" name="Email Address" placeholder="you@email.com" autocomplete="email" required></div>
     <p class="ms-note">This is where we'll send your report.</p>
     <button type="submit" class="btn" id="ms-next2">Next</button>
   </div>
   <div class="ms-step" data-step="3" hidden>
+    <p class="ms-thanks" id="ms-thanks">Thanks! Your request is in.</p>
     <h2>Want a more accurate value?</h2>
     <p class="ms-note">Leave your number and Jonathan will personally call to ask about any updates you've made — kitchen, baths, pool — so we can get your number right. Optional.</p>
-    <div class="form-field"><label for="name">Full name (optional)</label><input type="text" id="name" name="Full Name" placeholder="Your full name" autocomplete="name"></div>
     <div class="form-field"><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="Phone" placeholder="(818) 555-1234" autocomplete="tel"></div>
     <button type="button" class="btn" id="ms-send">Send my report</button>
-    <a href="/thank-you?farm=c" class="ms-skip" id="ms-skip">Skip, just email it</a>
+    <a href="/thank-you?farm=c" class="ms-skip" id="ms-skip">Skip</a>
   </div>
   <p class="form-error" id="ms-err" role="alert" style="display:none;margin:12px 0 0;color:#a33;font-size:15px"></p>
 </form>
 <script>(function(){
-var f=document.getElementById('ms-form'),err=document.getElementById('ms-err'),lab=document.getElementById('ms-label'),bars=f.querySelectorAll('.ms-bar span');
+var f=document.getElementById('ms-form'),err=document.getElementById('ms-err'),fill=document.getElementById('ms-fill');
 var PREVIEW=/[?&]preview=1\b/.test(location.search);
 var ERR='Sorry, something went wrong sending your request. Please try again, or call or text Jonathan at <a href="tel:8189347576">(818) 934-7576</a>.';
 function $(i){return document.getElementById(i)}
-function go(n){f.querySelectorAll('.ms-step').forEach(function(s){s.hidden=s.getAttribute('data-step')!=n});lab.textContent='Step '+n+' of 3';bars.forEach(function(b,i){b.className=i<n?'on':''});err.style.display='none';var fi=f.querySelector('.ms-step[data-step="'+n+'"] input:not([type=hidden])');if(fi&&n>1)fi.focus();}
+function go(n){f.querySelectorAll('.ms-step').forEach(function(s){s.hidden=s.getAttribute('data-step')!=n});fill.style.width=({1:'30%',2:'65%',3:'90%'})[n];err.style.display='none';var fi=f.querySelector('.ms-step[data-step="'+n+'"] input:not([type=hidden])');if(fi&&n>1)fi.focus();}
 function fail(){err.innerHTML=ERR;err.style.display='block'}
 function done(){location.href=$('fs-next').value}
 function send(obj){if(PREVIEW){console.log('[preview] would send',Object.keys(obj));return Promise.resolve()}
@@ -92,11 +92,11 @@ $('ms-next1').addEventListener('click',function(){var s=$('street');if(!s.value.
  if(!$('zip').checkValidity()){$('zip').reportValidity();return}
  $('addr-full').value=s.value.trim()+', '+$('city').value.trim()+', CA '+$('zip').value.trim();go(2)});
 f.addEventListener('keydown',function(e){if(e.key==='Enter'&&!$('ms-form').querySelector('.ms-step[data-step="1"]').hidden&&e.target.tagName==='INPUT'){e.preventDefault();$('ms-next1').click()}});
-f.addEventListener('submit',function(e){e.preventDefault();var em=$('email');if(f.querySelector('.ms-step[data-step="2"]').hidden)return;if(!em.value.trim()||!em.checkValidity()){em.reportValidity();return}
- var b=$('ms-next2');b.disabled=true;b.textContent='Sending...';var o=base();o.Message=$('fub-note').value;
- send(o).then(function(){b.disabled=false;b.textContent='Next';go(3)}).catch(function(){b.disabled=false;b.textContent='Next';fail()})});
+f.addEventListener('submit',function(e){e.preventDefault();var em=$('email'),nm=$('name');if(f.querySelector('.ms-step[data-step="2"]').hidden)return;if(!nm.value.trim()){nm.setCustomValidity('Please enter your full name.');nm.reportValidity();nm.setCustomValidity('');return}if(!em.value.trim()||!em.checkValidity()){em.reportValidity();return}
+ var b=$('ms-next2');b.disabled=true;b.textContent='Sending...';var o=base();o['Full Name']=nm.value.trim();o.Message=$('fub-note').value;
+ send(o).then(function(){b.disabled=false;b.textContent='Next';var fn=nm.value.trim().split(/\s+/)[0];$('ms-thanks').textContent=fn?'Thanks, '+fn+'! Your request is in.':'Thanks! Your request is in.';go(3)}).catch(function(){b.disabled=false;b.textContent='Next';fail()})});
 $('ms-send').addEventListener('click',function(){var p=$('phone').value.trim();if(!p){done();return}var b=this;b.disabled=true;b.textContent='Sending...';
- var o=base();o['Full Name']=$('name').value.trim();o.Phone=p;o.Message='Phone added - Farm C (farm: C)';
+ var o=base();o.Phone=p;o.Message='Phone added - Farm C (farm: C)';
  send(o).then(done).catch(function(){b.disabled=false;b.textContent='Send my report';fail()})});
 })();</script>
 
