@@ -94,11 +94,17 @@ $('ms-next1').addEventListener('click',function(){var s=$('street');if(!s.value.
  $('addr-full').value=s.value.trim()+', '+$('city').value.trim()+', CA '+$('zip').value.trim();go(2)});
 f.addEventListener('keydown',function(e){if(e.key==='Enter'&&!$('ms-form').querySelector('.ms-step[data-step="1"]').hidden&&e.target.tagName==='INPUT'){e.preventDefault();$('ms-next1').click()}});
 f.addEventListener('submit',function(e){e.preventDefault();var em=$('email'),nm=$('name');if(f.querySelector('.ms-step[data-step="2"]').hidden)return;if(!nm.value.trim()){nm.setCustomValidity('Please enter your full name.');nm.reportValidity();nm.setCustomValidity('');return}if(!em.value.trim()||!em.checkValidity()){em.reportValidity();return}
- var b=$('ms-next2');b.disabled=true;b.textContent='Sending...';var o=base();o['Full Name']=nm.value.trim();o.Message=$('fub-note').value;
+ var b=$('ms-next2');b.disabled=true;b.textContent='Sending...';var o=base();o['Full Name']=nm.value.trim();$('fub-note').value='Door knocker QR - Farm C (farm: C) - '+$('addr-full').value;o.Message=$('fub-note').value;
  send(o).then(function(){b.disabled=false;b.textContent='Next';var fn=nm.value.trim().split(/\s+/)[0];$('ms-thanks').textContent=fn?'Thanks, '+fn+'! Your request is in.':'Thanks! Your request is in.';go(3)}).catch(function(){b.disabled=false;b.textContent='Next';fail()})});
 $('ms-send').addEventListener('click',function(){var p=$('phone').value.trim();if(!p){done();return}var b=this;b.disabled=true;b.textContent='Sending...';
- var o=base();o.Phone=p;o.Message='Phone added - Farm C (farm: C)';
- send(o).then(done).catch(function(){b.disabled=false;b.textContent='Send my report';fail()})});
+ var o=base();o['Full Name']=$('name').value.trim();o.Phone=p;o.Message='Phone added - Farm C (farm: C) - '+$('addr-full').value;
+ send(o).then(function(){
+  // Re-post full record to FUB pixel: it listens for 'submit' on the form and reads visible-type fields
+  // (text/email/tel/textarea; hidden inputs are skipped). Our submit handler returns early on step 3, so no 2nd Web3Forms send.
+  $('fub-note').value='Door knocker QR - Farm C (farm: C) - Phone added - '+$('addr-full').value;
+  try{f.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}))}catch(_){}
+  if(PREVIEW){console.log('[preview] dispatched submit for FUB pixel');window.__fubRepost=1;return}
+  setTimeout(done,1200)}).catch(function(){b.disabled=false;b.textContent='Send my report';fail()})});
 })();</script>
 
 </div></section>
