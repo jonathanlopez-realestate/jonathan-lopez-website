@@ -201,3 +201,7 @@ main{position:relative;isolation:isolate}
 .links .nav-more-panel a,.links .nav-more-panel .nav-more-mobile{display:block}
 .mobile-nav{display:none!important}
 }
+.nav-more-btn .menu-icon{display:flex;flex-direction:column;gap:4px;width:20px}
+.nav-more-btn .menu-icon i{display:block;width:20px;height:2px;background:var(--gold-light)}
+.nav .nav-more-btn{background:transparent;box-shadow:none}
+.nav .nav-more-btn:hover,.nav .nav-more-btn[aria-expanded="true"]{background:rgba(216,193,155,.14)}
