@@ -12,7 +12,7 @@
     setOpen(btn.getAttribute('aria-expanded') !== 'true');
   });
   document.addEventListener('click', function (e) {
-    if (!panel.hidden && !panel.contains(e.target) && e.target !== btn) setOpen(false);
+    if (!panel.hidden && !panel.contains(e.target) && !btn.contains(e.target)) setOpen(false);
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !panel.hidden) { setOpen(false); btn.focus(); }

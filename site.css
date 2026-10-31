@@ -198,6 +198,6 @@ main{position:relative;isolation:isolate}
 .nav-more{position:static}
 .nav-more-panel{left:0;right:0;top:100%;min-width:0;padding:10px 18px 16px}
 .nav-more-panel a{font-size:14px;letter-spacing:.08em;padding:14px 4px}
-.nav-more-panel .nav-more-mobile{display:block}
+.links .nav-more-panel a,.links .nav-more-panel .nav-more-mobile{display:block}
 .mobile-nav{display:none!important}
 }
