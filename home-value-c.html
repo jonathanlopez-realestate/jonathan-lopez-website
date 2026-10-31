@@ -38,7 +38,7 @@
 <p class="hv-sub">Free personal estimate from your local real estate agent — <strong>not a Zestimate.</strong></p>
 <style>
 .ms-progress{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink);margin:0 0 6px}
-.ms-bar{height:4px;border-radius:2px;background:#e6e2d8;margin:0 0 20px;overflow:hidden}.ms-bar span{display:block;height:100%;width:30%;background:var(--gold-light,#c9a96e);transition:width .4s}.ms-thanks{font-size:16px;font-weight:700;color:var(--gold-ink);margin:0 0 6px}
+.ms-bar{height:4px;border-radius:2px;background:#e6e2d8;margin:0 0 20px;overflow:hidden}.ms-bar span{display:block;height:100%;width:50%;background:var(--gold-light,#c9a96e);transition:width .4s}.ms-thanks{font-size:16px;font-weight:700;color:var(--gold-ink);margin:0 0 6px}
 .ms-step[hidden]{display:none}.ms-step h2{font-size:24px;margin:0 0 8px}.ms-note{font-size:15px;margin:0 0 18px}
 .ms-skip{display:block;margin-top:14px;font-size:14px;color:inherit;text-decoration:underline;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
 </style>
@@ -69,11 +69,12 @@
   </div>
   <div class="ms-step" data-step="3" hidden>
     <p class="ms-thanks" id="ms-thanks">Thanks! Your request is in.</p>
+    <p class="ms-progress">Optional bonus — totally fine to skip</p>
     <h2>Want a more accurate value?</h2>
-    <p class="ms-note">Leave your number and Jonathan will personally call to ask about any updates you've made — kitchen, baths, pool — so we can get your number right. Optional.</p>
+    <p class="ms-note">Leave your number and Jonathan will personally call to ask about any updates you've made — kitchen, baths, pool — so we can get your number right.</p>
     <div class="form-field"><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="Phone" placeholder="(818) 555-1234" autocomplete="tel"></div>
     <button type="button" class="btn" id="ms-send">Send my report</button>
-    <a href="/thank-you?farm=c" class="ms-skip" id="ms-skip">Skip</a>
+    <a href="/thank-you?farm=c" class="ms-skip" id="ms-skip">Skip, just email my report</a>
   </div>
   <p class="form-error" id="ms-err" role="alert" style="display:none;margin:12px 0 0;color:#a33;font-size:15px"></p>
 </form>
@@ -82,7 +83,7 @@ var f=document.getElementById('ms-form'),err=document.getElementById('ms-err'),f
 var PREVIEW=/[?&]preview=1\b/.test(location.search);
 var ERR='Sorry, something went wrong sending your request. Please try again, or call or text Jonathan at <a href="tel:8189347576">(818) 934-7576</a>.';
 function $(i){return document.getElementById(i)}
-function go(n){f.querySelectorAll('.ms-step').forEach(function(s){s.hidden=s.getAttribute('data-step')!=n});fill.style.width=({1:'30%',2:'65%',3:'90%'})[n];err.style.display='none';var fi=f.querySelector('.ms-step[data-step="'+n+'"] input:not([type=hidden])');if(fi&&n>1)fi.focus();}
+function go(n){f.querySelectorAll('.ms-step').forEach(function(s){s.hidden=s.getAttribute('data-step')!=n});fill.style.width=({1:'50%',2:'75%',3:'100%'})[n];err.style.display='none';var fi=f.querySelector('.ms-step[data-step="'+n+'"] input:not([type=hidden])');if(fi&&n>1)fi.focus();}
 function fail(){err.innerHTML=ERR;err.style.display='block'}
 function done(){location.href=$('fs-next').value}
 function send(obj){if(PREVIEW){console.log('[preview] would send',Object.keys(obj));return Promise.resolve()}
