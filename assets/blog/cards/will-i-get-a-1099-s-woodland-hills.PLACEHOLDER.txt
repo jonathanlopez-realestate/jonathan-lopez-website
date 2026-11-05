@@ -1,0 +1,3 @@
+PLACEHOLDER card/hero photo for will-i-get-a-1099-s-woodland-hills.jpg
+Created 2026-11-05 so the blog HTML commit references a real file.
+Social Media: replace this JPEG with the real photo before/with the GBP post.
