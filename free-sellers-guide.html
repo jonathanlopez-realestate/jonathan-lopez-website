@@ -9,18 +9,9 @@
 .hv-hero{background:linear-gradient(180deg,rgba(10,22,29,.94),rgba(10,22,29,.84)),url('assets/woodland-hills-home.png') center/cover;color:var(--white);padding:56px 0 52px;position:relative}
 .hv-hero:after{content:"";position:absolute;bottom:0;left:0;right:0;height:7px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold) 32%,transparent 32%)}
 .hv-wrap{max-width:1000px;margin:0 auto;padding:0 18px}
-.sg-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:center}
-.sg-eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin:0 0 16px}
 .hv-hero h1{font:300 clamp(36px,6.4vw,56px)/1.1 Lato,Arial,sans-serif;letter-spacing:-.025em;margin:0 0 18px}
 .hv-hero h1 em{font-style:normal;color:var(--gold-light)}
-.hv-sub{font-size:17px;line-height:1.65;color:#e9e4da;margin:0 0 22px}
-.sg-cover{display:block;width:100%;max-width:400px;height:auto;margin:0 auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
-.sg-formwrap{margin-top:26px;max-width:560px}
-.hv-hero .contact-form{color:var(--text);margin:0;padding:30px;max-width:620px}
-.hv-hero .contact-form .form-field{margin-bottom:16px}
 .hv-hero .btn{width:100%}
-.sg-opt{font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted)}
-.sg-fine{font-size:12.5px;line-height:1.55;color:var(--muted);margin:12px 0 0}
 .sg-sec{padding:44px 0 6px}
 .sg-sec h2{font:300 clamp(28px,5vw,36px)/1.2 Lato,Arial,sans-serif;margin:0 0 8px}
 .hv-eyebrow{color:var(--gold-ink);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 20px}
@@ -41,19 +32,51 @@
 .sg-up-actions{display:flex;gap:12px;flex-wrap:wrap}.sg-up-actions .btn{flex:1;min-width:200px}
 .btn-dark{background:var(--night);color:var(--white);border-color:var(--night)}
 .btn-line{background:transparent;color:var(--night);border-color:var(--night)}
-@media(max-width:800px){.sg-grid{grid-template-columns:1fr;gap:26px}.sg-cover{max-width:260px;order:-1}.hv-hero{padding:36px 0 40px}.hv-hero .contact-form,.sg-ty{padding:22px}}
+.sg-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-areas:"top cover" "sub cover" "form cover" "proof cover";column-gap:44px;align-items:start}
+.sg-top{grid-area:top;align-self:end}.sg-sub{grid-area:sub}.sg-cover{grid-area:cover;align-self:center}.sg-formwrap{grid-area:form}.sg-proof{grid-area:proof}
+.sg-eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin:0 0 16px}
+.hv-sub{font-size:17px;line-height:1.65;color:#e9e4da;margin:0 0 22px}
+.sg-cover{display:block;width:100%;max-width:400px;height:auto;margin:0 auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.sg-formwrap{max-width:560px}
+.hv-hero .contact-form{color:var(--text);margin:0;padding:28px;max-width:560px}
+.hv-hero .contact-form .form-field{margin-bottom:16px}
+.sg-fine{font-size:12.5px;line-height:1.55;color:var(--muted);margin:12px 0 0}
+.sg-opt{font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted)}
+.sg-big{min-height:64px;font-size:13px}
+.sg-proof{margin:18px 0 0;padding:2px 0 2px 16px;border-left:2px solid var(--gold);font-size:15px;line-height:1.5;color:#e9e4da}
+.sg-proof strong{color:var(--white)}
+.sg-step[hidden]{display:none}
+.sg-step h2{font:300 28px/1.2 Lato,Arial,sans-serif;margin:0 0 6px;color:var(--night)}
+.sg-step p{margin:0 0 16px}
+.sg-skip{display:block;margin:14px 0 0;text-align:center;font-size:14px;color:var(--muted);text-decoration:underline;background:none;border:0;padding:0;cursor:pointer;font-family:inherit;width:100%}
+.sg-addr{margin-top:22px;padding-top:20px;border-top:1px solid var(--rule)}
+.sg-addr[hidden]{display:none}
+.sg-addr h3{font:300 22px/1.3 Lato,Arial,sans-serif;margin:0 0 6px;color:var(--night)}
+.sg-talk{font-size:14px;color:var(--muted);margin:18px 0 0;text-align:center}
+@media(max-width:800px){
+.hv-hero{padding:18px 0 28px}
+.sg-grid{grid-template-columns:112px minmax(0,1fr);grid-template-areas:"cover top" "form form" "proof proof" "sub sub";column-gap:16px;row-gap:0;align-items:center}
+.sg-top{align-self:center}
+.sg-cover{max-width:112px;margin:0}
+.sg-eyebrow{font-size:10px;margin:0 0 8px}
+.hv-hero h1{font-size:25px;line-height:1.18;margin:0}
+.sg-formwrap{margin-top:16px;max-width:none}
+.hv-hero .contact-form{padding:20px}
+.sg-proof{margin-top:14px;font-size:14px}
+.hv-sub{font-size:15px;margin:18px 0 0}
+}
 </style></head><body>
 <div class="top"><div class="wrap"><span>San Fernando Valley &amp; Greater Los Angeles</span><span>CA DRE #02282844</span></div></div>
 <header class="nav"><div class="wrap"><a class="brand" href="/" aria-label="Jonathan Lopez Real Estate"><span class="brand-mark" aria-hidden="true">JL</span><span class="brand-descriptor">Jonathan Lopez<br>Real Estate</span></a></div></header>
 <main>
 <section class="hv-hero"><div class="hv-wrap">
 <div class="sg-grid">
-<div>
+<div class="sg-top">
 <p class="sg-eyebrow">Free Seller's Guide</p>
 <h1>Thinking about selling? Know what your <em>home</em> is really worth first.</h1>
-<p class="hv-sub">Get the free Seller's Guide: how pricing really works, which prep is worth your money, what you'll sign, and where the numbers land at closing. Plain English, no pitch.</p>
+</div>
+<img class="sg-cover" src="assets/sellers-guide-cover.png" alt="Cover of The Seller's Guide by Jonathan Lopez" width="648" height="898">
 <div class="sg-formwrap">
-<div class="sg-formstate" id="sg-formstate">
 <form class="contact-form" id="sg-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
   <input type="hidden" name="access_key" value="1e05f524-7137-4686-aa6b-d3e659f76eb2">
   <input type="hidden" name="subject" value="Seller's Guide request – Social">
@@ -61,28 +84,31 @@
   <input type="hidden" name="source" value="Sellers Guide - Social">
   <textarea name="Message" id="fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0">Sellers Guide - Social</textarea>
   <input type="checkbox" name="botcheck" class="honeypot-field" tabindex="-1" autocomplete="off" style="display:none">
-  <div class="form-field"><label for="name">Full name *</label><input type="text" id="name" name="Full Name" placeholder="Your full name" autocomplete="name" required></div>
-  <div class="form-field"><label for="email">Email address *</label><input type="email" id="email" name="Email Address" placeholder="you@email.com" autocomplete="email" required></div>
-  <div class="form-field"><label for="phone">Phone *</label><input type="tel" id="phone" name="Phone" placeholder="(818) 555-1234" autocomplete="tel" required></div>
-  <div class="form-field"><label for="addr">Property address <span class="sg-opt">(optional, for a custom value note)</span></label><input type="text" id="addr" name="Property Address" placeholder="1234 Your St, City, CA" autocomplete="street-address"></div>
-  <button type="submit" class="btn" id="sg-submit">Send me the free guide</button>
-  <p class="sg-fine">Free. No obligation. Jonathan may follow up by phone, text or email about your guide. Your info is never sold. <a href="privacy-policy.html">Privacy Policy</a></p>
+  <div class="sg-step" id="sg-step1" data-step="1">
+    <div class="form-field"><label for="name">First name *</label><input type="text" id="name" name="First Name" placeholder="First name" autocomplete="given-name" required></div>
+    <div class="form-field"><label for="email">Email address *</label><input type="email" id="email" name="Email Address" placeholder="you@email.com" autocomplete="email" required></div>
+    <button type="submit" class="btn sg-big" id="sg-submit" style="width:100%">Send Me the Guide</button>
+    <p class="sg-fine">Jonathan may follow up by email. <a href="privacy-policy.html">Privacy Policy</a></p>
+  </div>
+  <div class="sg-step" id="sg-step2" data-step="2" hidden>
+    <h2 id="sg-thanks">Your guide is ready!</h2>
+    <p>Download it now and keep it handy.</p>
+    <a class="btn sg-big" id="sg-dl" href="assets/Sellers-Guide.pdf" download style="width:100%">Download the Seller's Guide (PDF)</a>
+    <div class="sg-addr" id="sg-addr-box">
+      <h3>Want a more accurate home value?</h3>
+      <p>Optional: add your address and Jonathan will include a value note by email.</p>
+      <div class="form-field"><label for="addr">Add your address <span class="sg-opt">(optional)</span></label><input type="text" id="addr" name="Property Address" placeholder="1234 Your St, City, CA" autocomplete="street-address"></div>
+      <button type="button" class="btn btn-dark" id="sg-addr-send" style="width:100%">Send My Address</button>
+      <button type="button" class="sg-skip" id="sg-skip">Skip, I'm all set</button>
+    </div>
+    <p class="sg-addr-done" id="sg-addr-done" hidden style="margin:18px 0 0;font-weight:700;color:var(--gold-ink)">Got it. Jonathan will email your value note.</p>
+    <p class="sg-talk">Prefer to talk? Call or text <a href="tel:8189347576">(818) 934-7576</a></p>
+  </div>
   <p class="form-error" id="sg-err" role="alert" style="display:none;margin:12px 0 0;color:#a33;font-size:15px"></p>
 </form>
 </div>
-<div class="sg-ty" id="sg-ty" hidden>
-  <h2 id="sg-thanks">Thanks! Your guide is ready.</h2>
-  <p>Download it now and keep it handy.</p>
-  <a class="btn" id="sg-dl" href="assets/Sellers-Guide.pdf" download>Download the Seller's Guide (PDF)</a>
-  <div class="sg-up">
-    <h3>Want your actual number?</h3>
-    <p>A guide gives you the rules. A 15-minute call gives you your home's numbers: a free, no-pressure home value consult with Jonathan.</p>
-    <div class="sg-up-actions"><a class="btn btn-dark" href="tel:8189347576">Book a 15-min call: (818) 934-7576</a><a class="btn btn-line" href="sms:8189347576">Text Jonathan</a></div>
-  </div>
-</div>
-</div>
-</div>
-<img class="sg-cover" src="assets/sellers-guide-cover.png" alt="Cover of The Seller's Guide by Jonathan Lopez" width="648" height="898">
+<p class="sg-proof"><strong>Jonathan Lopez</strong>, Realtor · 700+ homes sold with the Jim Sandoval Group</p>
+<p class="hv-sub sg-sub">Get the free Seller's Guide: how pricing really works, which prep is worth your money, what you'll sign, and where the numbers land at closing. Plain English, no pitch.</p>
 </div>
 </div></section>
 <div class="hv-wrap">
@@ -95,33 +121,46 @@
 <li><strong>The California disclosures, in plain English</strong>What you'll be asked to sign, and your timeline from decision to keys.</li>
 <li><strong>Costs, net sheet, offers and escrow</strong>Where the money goes, how to compare offers beyond price, and every step to closing.</li>
 </ul></section>
-<p class="hv-bio"><strong>Jonathan Lopez</strong>, Realtor · Jim Sandoval Group at Park Regency Realty · 700+ homes sold with the Jim Sandoval Group</p>
 <p class="sg-disc">General information only, not legal, tax or financial advice. Jonathan is a licensed real estate agent, not an attorney or CPA. If your property is currently listed, please disregard.</p>
 </div>
 </main>
 <footer class="footer"><div class="wrap"><div>Jonathan Lopez, CalDRE #02282844 | Jim Sandoval Group | Park Regency Realty, CalDRE #01231306<br><a href="tel:8189347576">(818) 934-7576</a></div><div class="footer-links"><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a></div></div></footer>
 <script>(function(){
-// Same Web3Forms JSON POST + FUB pixel submit mechanism as /home-value-m. Add ?preview=1 to skip the real send (for design review).
+// Same Web3Forms JSON POST + FUB pixel submit mechanism as /home-value-m (2-step: name+email, then optional address).
+// ?preview=1 skips real sends; ?preview=1&step=2 renders step 2.
 var f=document.getElementById('sg-form'),err=document.getElementById('sg-err');
 var PREVIEW=/[?&]preview=1\b/.test(location.search);
 var ERR='Sorry, something went wrong sending your request. Please try again, or call or text Jonathan at <a href="tel:8189347576">(818) 934-7576</a>.';
 function $(i){return document.getElementById(i)}
+function go(n){$('sg-step1').hidden=n!=1;$('sg-step2').hidden=n!=2;err.style.display='none'}
 function send(obj){if(PREVIEW){console.log('[preview] would send',Object.keys(obj));return Promise.resolve()}
  return fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(obj)}).then(function(x){return x.json().catch(function(){return{}}).then(function(j){if(!x.ok||j.success===false)throw 0})})}
+function base(src,subject){var o={};['access_key','from_name','botcheck'].forEach(function(k){var x=f.querySelector('[name='+k+']');if(x)o[k]=x.type==='checkbox'?x.checked:x.value});
+ o.subject=subject;o.source=src;o['First Name']=$('name').value.trim();o['Email Address']=$('email').value.trim();return o}
 f.addEventListener('submit',function(e){e.preventDefault();
- var nm=$('name'),em=$('email'),ph=$('phone');
- if(!nm.value.trim()){nm.setCustomValidity('Please enter your full name.');nm.reportValidity();nm.setCustomValidity('');return}
+ if($('sg-step1').hidden)return;
+ var nm=$('name'),em=$('email');
+ if(!nm.value.trim()){nm.setCustomValidity('Please enter your first name.');nm.reportValidity();nm.setCustomValidity('');return}
  if(!em.value.trim()||!em.checkValidity()){em.reportValidity();return}
- if(ph.value.replace(/\D/g,'').length<10){ph.setCustomValidity('Please enter a 10-digit phone number.');ph.reportValidity();ph.setCustomValidity('');return}
- var b=$('sg-submit');b.disabled=true;b.textContent='Sending...';err.style.display='none';
- var a=$('addr').value.trim();$('fub-note').value='Sellers Guide - Social'+(a?' - '+a:'');
- var o={};['access_key','subject','from_name','source','botcheck'].forEach(function(k){var x=f.querySelector('[name='+k+']');if(x)o[k]=x.type==='checkbox'?x.checked:x.value});
- o['Full Name']=nm.value.trim();o['Email Address']=em.value.trim();o.Phone=ph.value.trim();o['Property Address']=a;o.Message=$('fub-note').value;
+ var b=$('sg-submit');b.disabled=true;b.textContent='Sending...';
+ $('fub-note').value='Sellers Guide - Social';
+ var o=base('Sellers Guide - Social',"Seller's Guide request – Social");o.Message=$('fub-note').value;
  send(o).then(function(){
-  var fn=nm.value.trim().split(/\s+/)[0];$('sg-thanks').textContent=fn?'Thanks, '+fn+'! Your guide is ready.':'Thanks! Your guide is ready.';
-  $('sg-formstate').hidden=true;$('sg-ty').hidden=false;$('sg-ty').scrollIntoView({behavior:'smooth',block:'center'});
- }).catch(function(){b.disabled=false;b.textContent='Send me the free guide';err.innerHTML=ERR;err.style.display='block'})});
-if(PREVIEW&&/[?&]ty=1\b/.test(location.search)){$('sg-formstate').hidden=true;$('sg-ty').hidden=false}
+  var fn=nm.value.trim().split(/\s+/)[0];$('sg-thanks').textContent=fn?'Thanks, '+fn+'! Your guide is ready.':'Your guide is ready!';
+  b.disabled=false;b.textContent='Send Me the Guide';go(2);
+ }).catch(function(){b.disabled=false;b.textContent='Send Me the Guide';err.innerHTML=ERR;err.style.display='block'})});
+$('sg-addr-send').addEventListener('click',function(){var a=$('addr').value.trim();if(!a){$('addr').focus();return}
+ var b=this;b.disabled=true;b.textContent='Sending...';
+ $('fub-note').value='Sellers Guide - Social - Address - '+a;
+ var o=base('Sellers Guide - Social - Address',"Seller's Guide address added – Social");o['Property Address']=a;o.Message=$('fub-note').value;
+ send(o).then(function(){
+  // Re-post full record (name, email, address) to the FUB pixel so it matches the same lead; our submit handler returns early on step 2.
+  try{f.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}))}catch(_){}
+  if(PREVIEW)window.__fubRepost=1;
+  $('sg-addr-box').hidden=true;$('sg-addr-done').hidden=false;
+ }).catch(function(){b.disabled=false;b.textContent='Send My Address';err.innerHTML=ERR;err.style.display='block'})});
+$('sg-skip').addEventListener('click',function(){$('sg-addr-box').hidden=true});
+if(PREVIEW&&/[?&]step=2\b/.test(location.search)){go(2)}
 })();</script>
 <!-- begin deferred FUB Widget Tracker Code -->
 <script>
