@@ -597,6 +597,16 @@ form[data-dir="back"] .step:not([hidden]){animation-name:stepBack}
   #valuation .split>div:first-child>.lede{order:4}
   #valuation .split>div:first-child>.notes{order:5}
 }
+/* Anchor jumps and focus scrolling clear the fixed header (74px) */
+#valuation .frame,#valuation .display,#valuation .success,.f .in{scroll-margin-top:96px}
+/* Phones: more breathing room between the small floated labels and typed values */
+@media (max-width:559px){
+  .f{padding-top:24px;margin-bottom:34px}
+  .f .in{padding-top:16px}
+  .f>label{top:41px}
+  .f--lg>label{top:43px}
+  .cols{gap:0}
+}
 </style>
 </head>
 
