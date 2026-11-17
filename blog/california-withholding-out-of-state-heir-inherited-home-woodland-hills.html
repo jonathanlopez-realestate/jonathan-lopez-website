@@ -42,7 +42,8 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jonathanlopezrealestate.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://jonathanlopezrealestate.com/blog/index.html"}, {"@type": "ListItem", "position": 3, "name": "I Inherited a Woodland Hills Home and Live Out of State. Why Is Escrow Withholding Part of My Sale Proceeds?", "item": "https://jonathanlopezrealestate.com/blog/california-withholding-out-of-state-heir-inherited-home-woodland-hills.html"}]}
 </script>
-<link rel="stylesheet" href="/jl-forms.css?v=20261117">
+<link rel="preload" href="/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/jl-forms.css?v=20261117b">
 <!-- begin deferred FUB Widget Tracker Code -->
 <script>
 function initFubPixel() {
@@ -151,112 +152,163 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 
 </article>
 
-<!-- jl home-value block (2-step: name + email, then optional address) -->
-<section class="jl-tool jl-band jl-band--dark" id="home-value" aria-labelledby="jl-hv-title">
-  <div class="jl-wrap">
-    <p class="jl-eyebrow">Free home value</p>
-    <h2 class="jl-title" id="jl-hv-title">What's your <em>Woodland Hills</em> home worth?</h2>
-    <p class="jl-lede">A personal estimate from your local agent, built from real recent sales near you. <strong>Not a Zestimate.</strong></p>
+<!-- jl home-value block v2 (2-step: name + email, then optional address) -->
+<section class="jl-tool jl-tool--dark jl-band" id="home-value" aria-labelledby="jl-hv-title">
+  <div class="jl-wrap jl-split jl-layout">
 
-    <div class="jl-card">
-      <form data-jl-form data-jl-mode="two-step"
-            data-placement="auto"
-            data-lead-type="Home Value Request"
-            data-source="Website - Home Value"
-            data-subject="Home value request"
-            novalidate>
-        <textarea name="Message" class="jl-fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off"></textarea>
-        <div class="jl-progress" aria-hidden="true"><span></span></div>
+    <div class="jl-head">
+      <p class="jl-eyebrow" data-jl-reveal>A private valuation</p>
+      <h2 class="jl-display" id="jl-hv-title" data-jl-reveal style="--jl-delay:.08s">What&rsquo;s your <em>home</em> worth?</h2>
+    </div>
 
-        <!-- Step 1: name + email -->
-        <fieldset class="jl-step" data-step="1">
-          <legend class="jl-step-title">Where should I send your estimate?</legend>
-          <div class="jl-field">
-            <label for="jl-hv-name">Full name *</label>
-            <input class="jl-input" id="jl-hv-name" name="Full Name" type="text" autocomplete="name" placeholder="Your full name" required>
+    <div class="jl-intro">
+      <p class="jl-lede" data-jl-reveal style="--jl-delay:.16s">A considered estimate, prepared personally from the homes that have actually sold around yours. Not an algorithm, and not a Zestimate.</p>
+      <ol class="jl-notes" data-jl-reveal style="--jl-delay:.24s">
+        <li><span class="jl-num">i.</span><span><b>Comparable sales, read closely</b>Recent closings near you, adjusted for the details that matter.</span></li>
+        <li><span class="jl-num">ii.</span><span><b>Prepared by me, not a program</b>Jonathan Lopez, Realtor, Jim Sandoval Group.</span></li>
+        <li><span class="jl-num">iii.</span><span><b>Delivered privately</b>By email, directly from me.</span></li>
+      </ol>
+    </div>
+
+    <div class="jl-formcol">
+      <div class="jl-frame" data-jl-holder data-jl-reveal style="--jl-delay:.2s">
+        <form data-jl-form data-jl-mode="two-step"
+              data-placement="auto"
+              data-lead-type="Home Value Request"
+              data-source="Website - Home Value"
+              data-subject="Home value request"
+              novalidate>
+
+          <div class="jl-progress" aria-hidden="true">
+            <span class="jl-progress-count"><span data-step-now>01</span> / <span data-step-total>02</span></span>
+            <span class="jl-progress-track"><span class="jl-progress-fill"></span></span>
           </div>
-          <div class="jl-field">
-            <label for="jl-hv-email">Email address *</label>
-            <input class="jl-input" id="jl-hv-email" name="Email Address" type="email" autocomplete="email" placeholder="you@email.com" required>
-          </div>
-          <button class="jl-btn" type="submit">Get My Home Value</button>
-          <p class="jl-note"><a href="/privacy-policy.html">Privacy Policy</a></p>
-        </fieldset>
 
-        <!-- Step 2: optional address -->
-        <fieldset class="jl-step" data-step="2" hidden>
-          <legend class="jl-hp">Optional: add your address</legend>
-          <p class="jl-thanks" data-jl-thanks>Thanks! Your request is in.</p>
-          <p class="jl-step-title">Want a more accurate value? <span class="jl-opt">(optional)</span></p>
-          <div class="jl-field">
-            <label for="jl-hv-address">Property address <span class="jl-opt">(optional)</span></label>
-            <input class="jl-input" id="jl-hv-address" name="Property Address" type="text" autocomplete="street-address" placeholder="1234 Your St, Woodland Hills, CA 91367">
-          </div>
-          <div class="jl-actions">
-            <button class="jl-btn" type="button" data-jl-addr>Send My Address</button>
-            <button class="jl-link-btn" type="button" data-jl-skip>Skip, I'm all set</button>
-          </div>
-        </fieldset>
+          <!-- Step 1: name + email (sends right away) -->
+          <fieldset class="jl-step">
+            <legend class="jl-q">To begin, who should I prepare this for?</legend>
+            <div class="jl-f">
+              <input class="jl-in" id="jl-hv-name" name="Full Name" type="text" autocomplete="name" placeholder=" " required>
+              <label for="jl-hv-name">Your name</label>
+            </div>
+            <div class="jl-f">
+              <input class="jl-in" id="jl-hv-email" name="Email Address" type="email" autocomplete="email" placeholder=" " required>
+              <label for="jl-hv-email">Email address</label>
+            </div>
+            <div class="jl-actions">
+              <button class="jl-btn" type="submit">Continue <span class="jl-arrow" aria-hidden="true"></span></button>
+            </div>
+          </fieldset>
 
-        <input type="checkbox" name="botcheck" class="jl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="jl-status" role="status" aria-live="polite"></p>
-      </form>
+          <!-- Step 2: the residence (optional) -->
+          <fieldset class="jl-step" hidden>
+            <legend class="jl-q"><span data-jl-thanks>Thank you. Your request is in.</span><small>Optional: add the address and I can begin right away.</small></legend>
 
-      <div class="jl-success" hidden>
-        <h3>Got it<span data-first-name></span>.</h3>
-        <p>I'll personally email your home's estimated value.</p>
-        <p>Questions in the meantime? Call or text <a href="tel:8189347576">(818) 934-7576</a>.</p>
+            <div class="jl-slip" aria-hidden="true">
+              <span class="jl-slip-label">Prepared for</span>
+              <span class="jl-slip-line"><span class="jl-echo" data-echo="Full Name" data-empty="Your name"></span></span>
+              <span class="jl-slip-line jl-slip-line--sub"><span class="jl-echo" data-echo="Property Address" data-empty="Your residence"></span>, <span class="jl-echo" data-echo="City" data-empty="Your city"></span></span>
+            </div>
+
+            <div class="jl-f jl-f--serif">
+              <input class="jl-in jl-in--serif" id="jl-hv-address" name="Property Address" type="text" autocomplete="address-line1" placeholder=" ">
+              <label for="jl-hv-address">Street address</label>
+            </div>
+            <div class="jl-cols">
+              <div class="jl-f">
+                <input class="jl-in" id="jl-hv-city" name="City" type="text" autocomplete="address-level2" placeholder=" ">
+                <label for="jl-hv-city">City</label>
+              </div>
+              <div class="jl-f">
+                <input class="jl-in" id="jl-hv-zip" name="ZIP" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" placeholder=" ">
+                <label for="jl-hv-zip">ZIP</label>
+              </div>
+            </div>
+
+            <div class="jl-actions">
+              <button class="jl-btn" type="submit">Send my address <span class="jl-arrow" aria-hidden="true"></span></button>
+              <button class="jl-text-btn" type="button" data-skip-submit data-clear="Property Address City ZIP">Skip, I’m all set</button>
+            </div>
+          </fieldset>
+
+          <textarea name="Message" class="jl-fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off"></textarea>
+          <input type="checkbox" name="botcheck" class="jl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="jl-status" role="status" aria-live="polite"></p>
+          <p class="jl-fine"><a href="/privacy-policy.html">Privacy Policy</a>. If your property is currently listed, please disregard.</p>
+        </form>
+
+        <div class="jl-success" hidden>
+          <span class="jl-rule"></span>
+          <h3>Thank you<span data-first-name></span>.</h3>
+          <p data-show-if="Property Address">I’ll study the recent sales around <span data-fill="Property Address"></span> and send your valuation by email.</p>
+          <p data-show-if="!Property Address">I’ll be in touch by email shortly to confirm the address, then prepare your valuation.</p>
+          <p>Should you prefer to talk it through, I’m at <a class="jl-link" href="tel:8189347576">(818) 934-7576</a>.</p>
+        </div>
       </div>
     </div>
 
-    <p class="jl-note jl-note--dark">If your property is currently listed, please disregard.</p>
   </div>
 </section>
 
-<!-- jl Ask Your Neighbor compact box (blog footer) -->
-<section class="jl-tool jl-band jl-ask-compact" aria-labelledby="jl-askc-title">
-  <div class="jl-wrap">
-    <p class="jl-eyebrow">Ask Your Neighbor</p>
-    <h2 class="jl-title" id="jl-askc-title">Have a question this post didn't answer?</h2>
-    <p class="jl-lede">Ask me directly. Real answers for Woodland Hills homeowners, usually within 48 hours.</p>
-    <div class="jl-card">
-      <form data-jl-form
-            data-placement="auto"
-            data-lead-type="Ask Your Neighbor"
-            data-source="Website - Ask Your Neighbor (blog)"
-            data-subject="Ask Your Neighbor question (blog)"
-            novalidate>
-        <textarea name="Message" class="jl-fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off"></textarea>
-        <fieldset class="jl-step">
-          <legend class="jl-hp">Ask a question</legend>
-          <div class="jl-field">
-            <label for="jl-askc-q">Your question *</label>
-            <textarea class="jl-input" id="jl-askc-q" name="Question" rows="3" maxlength="1500" required></textarea>
-          </div>
-          <div class="jl-row jl-row--city">
-            <div class="jl-field">
-              <label for="jl-askc-email">Email address *</label>
-              <input class="jl-input" id="jl-askc-email" name="Email Address" type="email" autocomplete="email" placeholder="you@email.com" required>
-            </div>
-            <div class="jl-field">
-              <label for="jl-askc-name">First name *</label>
-              <input class="jl-input" id="jl-askc-name" name="First Name" type="text" autocomplete="given-name" required>
-            </div>
-          </div>
-          <label class="jl-check">
-            <input type="checkbox" name="Homeowner" value="Yes" data-jl-homeowner>
-            <span>I own a home in Woodland Hills.</span>
-          </label>
-          <button class="jl-btn" type="submit">Ask Jonathan</button>
-          <p class="jl-note"><a href="/privacy-policy.html">Privacy Policy</a></p>
-        </fieldset>
-        <input type="checkbox" name="botcheck" class="jl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="jl-status" role="status" aria-live="polite"></p>
-      </form>
-      <div class="jl-success" hidden>
-        <h3>Thanks<span data-first-name></span>, question received.</h3>
-        <p>I'll reply by email soon. In the meantime, see <a href="/street-report">what sold on your street</a>.</p>
+<!-- jl Ask Your Neighbor compact box v2 (blog footer) -->
+<section class="jl-tool jl-band jl-band--tight" aria-labelledby="jl-askc-title">
+  <div class="jl-wrap jl-compact">
+    <div class="jl-split" style="padding-top:clamp(40px,6vw,64px)">
+
+      <div data-jl-reveal>
+        <p class="jl-eyebrow">Ask Your Neighbor</p>
+        <h2 class="jl-display jl-display--m" id="jl-askc-title">A question this didn’t <em>quite</em> answer?</h2>
+        <p class="jl-lede" style="margin-bottom:0">Ask me directly. Real answers for homeowners, written personally.</p>
       </div>
+
+      <div data-jl-holder data-jl-reveal style="--jl-delay:.12s">
+        <form data-jl-form data-jl-expand
+              data-placement="auto"
+              data-lead-type="Ask Your Neighbor"
+              data-source="Website - Ask Your Neighbor (blog)"
+              data-subject="Ask Your Neighbor question (blog)"
+              novalidate>
+          <div class="jl-f jl-f--area" style="margin-bottom:22px">
+            <textarea class="jl-in" id="jl-askc-q" name="Question" rows="3" maxlength="1500" placeholder="Type your question here..." required></textarea>
+            <label for="jl-askc-q">Your question</label>
+          </div>
+
+          <div class="jl-more">
+            <div>
+              <div class="jl-cols" style="padding-top:8px">
+                <div class="jl-f">
+                  <input class="jl-in" id="jl-askc-name" name="Full Name" type="text" autocomplete="name" placeholder=" " required>
+                  <label for="jl-askc-name">Your name</label>
+                </div>
+                <div class="jl-f">
+                  <input class="jl-in" id="jl-askc-email" name="Email Address" type="email" autocomplete="email" placeholder=" " required>
+                  <label for="jl-askc-email">Email address</label>
+                </div>
+              </div>
+              <label class="jl-check">
+                <input type="checkbox" name="Homeowner" value="Yes">
+                <span>I own my home.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="jl-actions">
+            <button class="jl-btn" type="submit">Ask Jonathan <span class="jl-arrow" aria-hidden="true"></span></button>
+          </div>
+
+          <textarea name="Message" class="jl-fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off"></textarea>
+          <input type="checkbox" name="botcheck" class="jl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="jl-status" role="status" aria-live="polite"></p>
+          <p class="jl-fine"><a href="/privacy-policy.html">Privacy Policy</a></p>
+        </form>
+
+        <div class="jl-success" hidden>
+          <span class="jl-rule"></span>
+          <h3>Thank you<span data-first-name></span>.</h3>
+          <p>I’ll reply personally by email. Meanwhile, see <a class="jl-link" href="/street-report">what sold on your street</a>.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -271,6 +323,6 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
   </div>
 </footer>
 
-<script src="/jl-forms.js?v=20261117" defer></script>
+<script src="/jl-forms.js?v=20261117b" defer></script>
 </body>
 </html>

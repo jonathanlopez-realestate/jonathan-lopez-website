@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ask Your Neighbor: Real Answers for Woodland Hills Homeowners | Jonathan Lopez</title>
-<meta name="description" content="Ask a local Woodland Hills Realtor anything about your home, taxes, insurance, selling or the market. Real answers, no sales pitch.">
+<title>Ask Your Neighbor: Real Answers for Homeowners | Jonathan Lopez</title>
+<meta name="description" content="Ask a local Realtor anything about your home: property taxes, an inherited home, insurance, timing a sale. Answered personally.">
 <link rel="canonical" href="https://jonathanlopezrealestate.com/ask">
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="/site.css?v=20261031">
@@ -19,7 +19,8 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 </script>
 <!-- end deferred FUB Widget Tracker Code -->
 <script defer src="/assets/scroll.js"></script>
-<link rel="stylesheet" href="/jl-forms.css?v=20261117">
+<link rel="preload" href="/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/jl-forms.css?v=20261117b">
 </head>
 <body>
 
@@ -27,63 +28,102 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 
 <main>
 <section class="jl-tool jl-band jl-page" aria-labelledby="jl-ask-title">
-  <div class="jl-wrap jl-wrap--wide">
-    <p class="jl-eyebrow">Ask Your Neighbor</p>
-    <h1 class="jl-title" id="jl-ask-title">Real answers for <em>Woodland Hills</em> homeowners</h1>
-  </div>
-  <div class="jl-wrap jl-wrap--wide jl-split">
+  <div class="jl-wrap jl-split jl-layout">
 
-    <div class="jl-intro">
-      <p class="jl-lede">Got a question about your home? Ask it here. Property taxes, insurance, an inherited home, permits, or what's happening on your street.</p>
-      <ul class="jl-points">
-        <li>I answer every question personally</li>
-        <li>Homeowners get a direct reply within 48 hours</li>
-        <li>Good questions may be answered in the Ask Your Neighbor newsletter or on my blog. I never publish your name, email or street.</li>
-      </ul>
-      <p class="jl-note">General information, not legal, tax or financial advice. I'm a licensed real estate agent, not an attorney or CPA.</p>
+    <div class="jl-head">
+      <p class="jl-eyebrow" data-jl-reveal>Ask Your Neighbor</p>
+      <h1 class="jl-display" id="jl-ask-title" data-jl-reveal style="--jl-delay:.08s">Real answers for <em>homeowners</em>.</h1>
     </div>
 
-    <div class="jl-card">
-      <form data-jl-form
-            data-placement="ask"
-            data-lead-type="Ask Your Neighbor"
-            data-source="Website - Ask Your Neighbor"
-            data-subject="Ask Your Neighbor question"
-            novalidate>
-        <textarea name="Message" class="jl-fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off"></textarea>
-        <fieldset class="jl-step">
-          <legend class="jl-step-title">What's your question?</legend>
-          <div class="jl-field">
-            <label for="jl-ask-q">Your question *</label>
-            <textarea class="jl-input" id="jl-ask-q" name="Question" rows="5" maxlength="1500" placeholder="e.g. If I inherit my parents' house, does the property tax go up?" required></textarea>
-          </div>
-          <div class="jl-field">
-            <label for="jl-ask-name">First name *</label>
-            <input class="jl-input" id="jl-ask-name" name="First Name" type="text" autocomplete="given-name" required>
-          </div>
-          <div class="jl-field">
-            <label for="jl-ask-email">Email address * <span class="jl-opt">(so I can reply)</span></label>
-            <input class="jl-input" id="jl-ask-email" name="Email Address" type="email" autocomplete="email" placeholder="you@email.com" required>
-          </div>
-          <div class="jl-field">
-            <label for="jl-ask-street">Your street <span class="jl-opt">(optional, helps me make the answer local)</span></label>
-            <input class="jl-input" id="jl-ask-street" name="Street" type="text" autocomplete="address-line1" placeholder="Just the street name is fine">
-          </div>
-          <label class="jl-check">
-            <input type="checkbox" name="Homeowner" value="Yes" data-jl-homeowner>
-            <span>I own a home in Woodland Hills.</span>
-          </label>
-          <button class="jl-btn" type="submit">Send my question</button>
-          <p class="jl-note"><a href="/privacy-policy.html">Privacy Policy</a></p>
-        </fieldset>
-        <input type="checkbox" name="botcheck" class="jl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="jl-status" role="status" aria-live="polite"></p>
-      </form>
+    <div class="jl-intro">
+      <p class="jl-lede" data-jl-reveal style="--jl-delay:.16s">A question about your home deserves a straight answer from a local agent who works these streets every day. Ask anything. I read and answer each one myself.</p>
 
-      <div class="jl-success" hidden>
-        <h3>Thanks<span data-first-name></span>, question received.</h3>
-        <p>I'll reply by email. Homeowners usually hear back within 48 hours.</p>
-        <p>Want to see what sold near you while you wait? <a href="/street-report">Get your free street report</a>.</p>
+      <div data-jl-reveal style="--jl-delay:.24s">
+        <p class="jl-eyebrow" style="margin-bottom:14px">Begin with a subject</p>
+        <ul class="jl-topics" aria-label="Choose a subject (optional)">
+          <li><button type="button" class="jl-topic" data-topic="Property taxes" aria-pressed="false">Property taxes <span class="jl-arrow" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="jl-topic" data-topic="An inherited home" aria-pressed="false">An inherited home <span class="jl-arrow" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="jl-topic" data-topic="Insurance" aria-pressed="false">Insurance <span class="jl-arrow" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="jl-topic" data-topic="Timing a sale" aria-pressed="false">Timing a sale <span class="jl-arrow" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="jl-topic" data-topic="Renovations and permits" aria-pressed="false">Renovations &amp; permits <span class="jl-arrow" aria-hidden="true"></span></button></li>
+        </ul>
+        <p class="jl-fine" style="margin-top:0">Thoughtful questions may be answered in the Ask Your Neighbor newsletter or on my blog, always without your name, email or street. General information only, not legal, tax or financial advice.</p>
+      </div>
+    </div>
+
+    <div class="jl-formcol jl-sticky">
+      <div class="jl-frame" data-jl-holder data-jl-reveal style="--jl-delay:.2s">
+        <form data-jl-form
+              data-placement="ask"
+              data-lead-type="Ask Your Neighbor"
+              data-source="Website - Ask Your Neighbor"
+              data-subject="Ask Your Neighbor question"
+              novalidate>
+
+          <div class="jl-progress" aria-hidden="true">
+            <span class="jl-progress-count"><span data-step-now>01</span> / <span data-step-total>03</span></span>
+            <span class="jl-progress-track"><span class="jl-progress-fill"></span></span>
+          </div>
+
+          <!-- Step 1: the question -->
+          <fieldset class="jl-step">
+            <legend class="jl-q">What would you like to know?<small>Subject: <span data-topic-echo data-empty="your choice, or none at all">your choice, or none at all</span></small></legend>
+            <div class="jl-f jl-f--area">
+              <textarea class="jl-in" id="jl-ask-q" name="Question" rows="4" maxlength="1500" placeholder="e.g. If I inherit my parents’ house, does the property tax go up?" required></textarea>
+              <label for="jl-ask-q">Your question</label>
+              <span class="jl-count" data-count-for="jl-ask-q" aria-hidden="true"></span>
+            </div>
+            <div class="jl-actions">
+              <button class="jl-btn" type="button" data-next>Continue <span class="jl-arrow" aria-hidden="true"></span></button>
+            </div>
+          </fieldset>
+
+          <!-- Step 2: name + email -->
+          <fieldset class="jl-step" hidden>
+            <legend class="jl-q">Where should I send the answer?</legend>
+            <div class="jl-f">
+              <input class="jl-in" id="jl-ask-name" name="Full Name" type="text" autocomplete="name" placeholder=" " required>
+              <label for="jl-ask-name">Your name</label>
+            </div>
+            <div class="jl-f">
+              <input class="jl-in" id="jl-ask-email" name="Email Address" type="email" autocomplete="email" placeholder=" " required>
+              <label for="jl-ask-email">Email address</label>
+            </div>
+            <div class="jl-actions">
+              <button class="jl-btn" type="button" data-next>Continue <span class="jl-arrow" aria-hidden="true"></span></button>
+              <button class="jl-text-btn" type="button" data-back>Back</button>
+            </div>
+          </fieldset>
+
+          <!-- Step 3: optional context -->
+          <fieldset class="jl-step" hidden>
+            <legend class="jl-q">A little context<small>Optional. Your street helps me make the answer local.</small></legend>
+            <div class="jl-f">
+              <input class="jl-in" id="jl-ask-street" name="Street" type="text" autocomplete="address-line1" placeholder=" ">
+              <label for="jl-ask-street">Your street</label>
+            </div>
+            <label class="jl-check">
+              <input type="checkbox" name="Homeowner" value="Yes">
+              <span>I own my home.</span>
+            </label>
+            <div class="jl-actions">
+              <button class="jl-btn" type="submit">Send my question <span class="jl-arrow" aria-hidden="true"></span></button>
+              <button class="jl-text-btn" type="button" data-back>Back</button>
+            </div>
+          </fieldset>
+
+          <textarea name="Message" class="jl-fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off"></textarea>
+          <input type="checkbox" name="botcheck" class="jl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="jl-status" role="status" aria-live="polite"></p>
+          <p class="jl-fine"><a href="/privacy-policy.html">Privacy Policy</a></p>
+        </form>
+
+        <div class="jl-success" hidden>
+          <span class="jl-rule"></span>
+          <h3>Thank you<span data-first-name></span>.</h3>
+          <p>Your question is with me. I’ll reply personally by email<span data-show-if="Homeowner">, usually within 48 hours</span>.</p>
+          <p>In the meantime, you may enjoy <a class="jl-link" href="/street-report">the Street Report</a>, a private look at what’s sold near you.</p>
+        </div>
       </div>
     </div>
 
@@ -94,6 +134,6 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 <footer class="footer"><div class="wrap"><div>Jonathan Lopez, Woodland Hills Realtor | Jim Sandoval Group | CA DRE #02282844<br>(818) 934-7576</div><div class="footer-links"><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy Policy</a></div></div></footer>
 
 <script defer src="/assets/nav.js?v=20261031"></script>
-<script src="/jl-forms.js?v=20261117" defer></script>
+<script src="/jl-forms.js?v=20261117b" defer></script>
 </body>
 </html>
