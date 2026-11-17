@@ -1,4 +1,7 @@
-<!doctype html><html lang="en"><head><base href="/">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jonathan Lopez — Your Woodland Hills Agent | Jim Sandoval Group</title>
@@ -23,7 +26,6 @@
 <meta name="twitter:description" content="Real estate agent serving Woodland Hills, CA (91367) and the surrounding San Fernando Valley.">
 <meta name="twitter:image" content="https://jonathanlopezrealestate.com/assets/og-image.jpg">
 <link rel="icon" href="assets/favicon.ico">
-<link rel="stylesheet" href="/site.css?v=20261031">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -211,94 +213,957 @@ window.fubPixelIntialized = !0;
 function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListener(e.type,initFubPixelOnEvent)}document.addEventListener("DOMContentLoaded",function(){setTimeout(initFubPixel,3500)}),document.addEventListener("scroll",initFubPixelOnEvent),document.addEventListener("mousemove",initFubPixelOnEvent),document.addEventListener("touchstart",initFubPixelOnEvent);
 </script>
 <!-- end deferred FUB Widget Tracker Code -->
-<script defer src="/assets/scroll.js"></script></head><body><div class="top"><div class="wrap"><span>Woodland Hills &amp; the San Fernando Valley</span><span>CA DRE #02282844</span></div></div><header class="nav"><div class="wrap"><a class="brand" href="/" aria-label="Jonathan Lopez Real Estate home"><span class="brand-mark" aria-hidden="true">JL</span><span class="brand-descriptor">Real Estate</span></a><nav class="links" aria-label="Main navigation"><a href="/free-sellers-guide">Seller's Guide</a><a href="/first-time-buyers.html">First-Time Buyers</a><a href="/blog/index.html">Blog</a><div class="nav-more"><button type="button" class="nav-more-btn" aria-expanded="false" aria-controls="nav-more-panel" aria-label="Open menu"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button><div class="nav-more-panel" id="nav-more-panel" hidden><a class="nav-more-mobile" href="/free-sellers-guide">Seller's Guide</a><a class="nav-more-mobile" href="/first-time-buyers.html">First-Time Buyers</a><a class="nav-more-mobile" href="/blog/index.html">Blog</a><a href="/about.html">About</a><a href="/search.html">Search Homes</a><a href="/woodland-hills-market-update">Woodland Hills Market Update</a><a href="/contact.html">Contact</a></div></div><a class="nav-call" href="/contact.html">Contact</a></nav></div></header><main>
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preload" as="image" href="/assets/hero-flyin-poster.jpg">
+<style>
+/* Self-hosted (fontsource 5.3.0, SIL OFL 1.1): no Google Fonts request */
+@font-face{font-family:"Bodoni Moda";src:url("/fonts/bodoni-moda-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url("/fonts/bodoni-moda-latin-500-normal.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url("/fonts/bodoni-moda-latin-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url("/fonts/bodoni-moda-latin-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Jost";src:url("/fonts/jost-latin-300-normal.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Jost";src:url("/fonts/jost-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Jost";src:url("/fonts/jost-latin-500-normal.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Jost";src:url("/fonts/jost-latin-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Jost";src:url("/fonts/jost-latin-700-normal.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+</style>
+<link rel="preload" href="/fonts/bodoni-moda-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* =====================================================================
+   BRAND TOKENS: exact palette and type from the live site
+   (jonathanlopezrealestate.com / site.css?v=20261031)
+   ===================================================================== */
+:root{
+  /* Official :root tokens from live site.css */
+  --night:#17232a;       /* header, dark sections */
+  --night2:#24343c;      /* live about-teaser / secondary dark */
+  --ivory:#f6f3ed;       /* page background */
+  --sand:#e6dfd2;
+  --white:#fff;
+  --gold:#b49461;        /* official gold (brand-mark border, hero rule) */
+  --gold-light:#d8c19b;  /* on-dark accent, CTA fill */
+  --gold-ink:#80643d;    /* accent text on light */
+  --text:#29333a;        /* headings / default body */
+  --muted:#58646a;
+  --rule:#d9d2c7;
+  --warm-rule:#c7bcaa;
 
-<section class="hero">
-<h1><span class="hero-name">Jonathan Lopez</span> <span class="hero-role">Your Woodland Hills Agent</span></h1>
-<p class="lede">Real, local market knowledge for Woodland Hills (91367) and the surrounding San Fernando Valley. Not a Zestimate. Not a guess. Actual comps, actual guidance.</p>
-<div class="cta-row">
-<a class="btn" href="tel:8189347576">Call (818) 934-7576</a>
-<a class="btn btn-outline" href="blog/index.html">See the Current Market</a>
+  /* Additional exact hexes used on the live site (not in :root) */
+  --topbar:#101c22;      /* .top and .footer background */
+  --topbar-text:#e9e4da;
+  --nav-line:#48545b;
+  --post-body:#39464b;   /* .post p, li */
+  --field:#faf9f6;       /* form field background */
+  --field-border:#bbb9b1;
+  --on-dark-copy:#d9dfe0;
+  --hero-lede:#f0eee9;
+  --buyer-ground:#e8e2d8;
+
+  /* Aliases used in this layout, mapped to those exact live values */
+  --navy:var(--night);
+  --ink:var(--text);
+  --body:var(--post-body);
+  --cream:var(--ivory);
+  --gold-deep:var(--gold-ink);
+  --line:var(--field-border);
+  --track:var(--sand);   /* was guessed #e6e2d8; unused. Mapped to live --sand */
+
+  --hair-dark:rgba(41,51,58,.16);
+  --hair-light:rgba(246,243,237,.18);
+  --soft-light:rgba(246,243,237,.72);
+  --soft-dark:rgba(57,70,75,.78);
+
+  --font:Jost, Arial, sans-serif;
+  --font-display:"Bodoni Moda", "Bodoni MT", Didot, serif;
+  --display-weight:400;
+  --ease:cubic-bezier(.22,.7,.18,1);
+  --gutter:clamp(22px,6vw,80px);
+  --max:1240px;
+
+  --hero-image:url("/assets/woodland-hills-home.png");
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--body);font-family:var(--font);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Shared type ---------- */
+.display,.hero h1,.cred-title,.q,.in--lg,.success h3,.svc h3,.quote,.teaser h3,.faq summary,.menu-list a,.portrait .big-mono,.slip-line{
+  font-family:var(--font-display);
+}
+.display,.hero h1,.cred-title{font-weight:var(--display-weight)}
+
+.eyebrow{display:flex;align-items:center;gap:16px;margin:0 0 28px;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-ink)}
+.eyebrow::before{content:"";width:40px;height:1px;background:currentColor;opacity:.7}
+.on-dark .eyebrow{color:var(--gold-light)}
+.display{margin:0 0 28px;font-weight:var(--display-weight);font-size:clamp(40px,7.2vw,84px);line-height:1.04;letter-spacing:-.015em;color:var(--ink)}
+.display--m{font-size:clamp(34px,5.2vw,58px)}
+.on-dark .display{color:var(--cream)}
+.display em{font-style:normal;color:var(--gold-ink)}
+.on-dark .display em{color:var(--gold-light)}
+.lede{margin:0 0 40px;max-width:34em;font-size:clamp(16px,1.8vw,19px);line-height:1.8;color:var(--body)}
+.on-dark .lede{color:var(--soft-light)}
+.fine{font-size:12.5px;line-height:1.7;color:var(--soft-dark)}
+.on-dark .fine{color:rgba(246,243,237,.55)}
+.fine a,.tlink{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;transition:background-size .5s var(--ease),color .3s}
+.fine a:hover,.tlink:hover{background-size:0 1px;background-position:100% 100%;color:var(--gold-ink)}
+.on-dark .fine a:hover,.on-dark .tlink:hover{color:var(--gold-light)}
+
+/* Understated CTA: words + drawn arrow on a hairline */
+.cta{display:inline-flex;align-items:center;gap:20px;padding:0 0 12px;border-bottom:1px solid currentColor;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--ink);transition:color .4s,gap .6s var(--ease),border-color .4s}
+.on-dark .cta{color:var(--cream)}
+.cta:hover{gap:30px;color:var(--gold-ink);border-color:var(--gold-ink)}
+.on-dark .cta:hover{color:var(--gold-light);border-color:var(--gold-light)}
+.arrow{position:relative;width:30px;height:1px;background:currentColor;flex:0 0 auto}
+.arrow::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+/* ---------- Top bar + header ---------- */
+.topbar{background:var(--topbar);color:rgba(246,243,237,.78);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:11px;padding-bottom:11px}
+.topbar span:last-child{white-space:nowrap}
+@media (max-width:560px){.topbar span:first-child{display:none}.topbar .wrap{justify-content:center}}
+
+.site-head{position:absolute;left:0;right:0;z-index:50;color:var(--cream);transition:background .5s var(--ease),box-shadow .5s,transform .5s var(--ease)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:92px}
+.site-head.is-fixed{position:fixed;top:0;background:rgba(20,31,38,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--hair-light)}
+.site-head.is-fixed .wrap{height:74px}
+.site-head.is-hidden{transform:translateY(-100%)}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--cream)}
+.mono{display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--gold);border-radius:50%;font-weight:300;font-size:17px;letter-spacing:.04em;color:var(--cream)}
+.brand-name{display:flex;flex-direction:column;font-size:11px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;line-height:1.55}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{position:relative;text-decoration:none;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold-light);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.nav a:hover::after{transform:scaleX(1)}
+.nav .nav-contact{padding:12px 22px;border:1px solid var(--gold);color:var(--gold-light);transition:background .4s,color .4s}
+.nav .nav-contact::after{display:none}
+.nav .nav-contact:hover{background:var(--gold-light);color:var(--navy)}
+.menu-btn{display:grid;gap:6px;width:44px;height:44px;place-content:center;border:1px solid rgba(216,193,155,.55);background:none;cursor:pointer;padding:0}
+.menu-btn span{display:block;width:24px;height:1px;background:var(--cream);transition:transform .5s var(--ease),opacity .3s}
+@media (max-width:899px){.nav .nav-link{display:none}.nav{gap:14px}.nav .nav-contact{display:none}}
+
+/* Full-screen menu */
+.menu{position:fixed;inset:0;z-index:60;background:var(--navy);color:var(--cream);display:flex;flex-direction:column;padding:28px var(--gutter) 40px;opacity:0;visibility:hidden;transition:opacity .6s var(--ease),visibility 0s .6s}
+.menu.is-open{opacity:1;visibility:visible;transition:opacity .6s var(--ease)}
+.menu-top{display:flex;justify-content:space-between;align-items:center;max-width:var(--max);width:100%;margin:0 auto}
+.menu-close{position:relative;width:44px;height:44px;border:0;background:none;cursor:pointer}
+.menu-close::before,.menu-close::after{content:"";position:absolute;left:10px;right:10px;top:50%;height:1px;background:var(--cream);transform:rotate(45deg)}
+.menu-close::after{transform:rotate(-45deg)}
+.menu-list{list-style:none;margin:auto 0;padding:0;max-width:var(--max);width:100%;align-self:center}
+.menu-list li{overflow:hidden;border-bottom:1px solid var(--hair-light)}
+.menu-list a{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;text-decoration:none;font-weight:300;font-size:clamp(28px,5vw,48px);line-height:1.15;color:var(--cream);transform:translateY(100%);transition:transform .9s var(--ease),color .3s}
+.menu-list a small{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light)}
+.menu.is-open .menu-list a{transform:none}
+.menu-list li:nth-child(2) a{transition-delay:.05s}.menu-list li:nth-child(3) a{transition-delay:.1s}.menu-list li:nth-child(4) a{transition-delay:.15s}.menu-list li:nth-child(5) a{transition-delay:.2s}.menu-list li:nth-child(6) a{transition-delay:.25s}.menu-list li:nth-child(7) a{transition-delay:.3s}.menu-list li:nth-child(8) a{transition-delay:.35s}
+.menu-list a:hover{color:var(--gold-light)}
+.menu-foot{max-width:var(--max);width:100%;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,243,237,.6)}
+.menu-foot a{color:var(--gold-light);text-decoration:none}
+
+/* ---------- Hero (full-bleed, cinematic; copy sits high in the frame) ---------- */
+.hero{position:relative;min-height:calc(100vh - 40px);display:flex;align-items:flex-start;overflow:hidden;background:var(--navy);color:var(--cream)}
+@supports (min-height:100svh){.hero{min-height:calc(100svh - 40px)}}
+/* Fly-in video: plays once, then the final frame (hero-flyin-end.jpg) crossfades in and drifts slowly */
+.hero-media{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:linear-gradient(160deg,var(--night2),var(--night))}
+.hero-video,.hero-end{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero-video{z-index:0;background:var(--night)}
+.hero-end{z-index:1;opacity:1;transform:scale(1);transform-origin:50% 50%;will-change:opacity,transform}
+.js .hero-end{opacity:0;transition:opacity .6s ease}
+.js .hero.is-ended .hero-end{opacity:1;animation:heroDrift 25s ease-in-out infinite alternate}
+.js .hero.is-static .hero-end{opacity:1;transition:none;animation:none}
+.hero.is-static .hero-video{display:none}
+@keyframes heroDrift{from{transform:scale(1)}to{transform:scale(1.05)}}
+/* Soft night-colored shade behind the text (text sits high, upper left) */
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(120% 75% at 16% 24%,rgba(23,35,42,.6) 0%,rgba(23,35,42,.3) 45%,rgba(23,35,42,0) 76%),
+    linear-gradient(180deg,rgba(23,35,42,.74) 0%,rgba(23,35,42,.46) 24%,rgba(23,35,42,.12) 52%,rgba(23,35,42,.22) 76%,rgba(23,35,42,.66) 100%)}
+.js .hero::after{opacity:.4;transition:opacity 1.8s var(--ease)}
+.js .hero.text-in::after{opacity:1}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:calc(128px + clamp(12px,3vh,28px));padding-bottom:clamp(40px,8vh,80px)}
+.hero .eyebrow{color:var(--gold-light)}
+.hero h1{margin:0 0 22px;max-width:14em;font-family:var(--font-display);font-weight:var(--display-weight);font-size:clamp(42px,7.6vw,96px);line-height:1.06;letter-spacing:-.018em;color:var(--cream)}
+.hero-lead{margin:0 0 28px;max-width:36em;font-size:clamp(16px,1.25vw,19px);font-weight:400;line-height:1.65;letter-spacing:.01em;color:rgba(246,243,237,.9)}
+.hero-sub{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:32px}
+.hero-sign{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:rgba(246,243,237,.78)}
+@media (max-width:700px){.hero-sign{letter-spacing:.12em}.hero-sign .dot{display:none}.hero-sign .team{display:block;margin-top:8px}}
+.hero .fade{opacity:0;transform:translateY(24px);animation:up 1.4s var(--ease) forwards}
+.hero .fade:nth-child(2){animation-delay:.25s}.hero .fade:nth-child(3){animation-delay:.5s}.hero .fade:nth-child(4){animation-delay:.7s}
+@keyframes up{to{opacity:1;transform:none}}
+.js .hero .fade{animation:none;opacity:0;transform:translateY(22px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.js .hero.text-in .fade{opacity:1;transform:none}
+.js .hero .fade:nth-child(2){transition-delay:.12s}.js .hero .fade:nth-child(3){transition-delay:.24s}.js .hero .fade:nth-child(4){transition-delay:.36s}
+.js .hero .scroll-cue{opacity:0;transition:opacity 1.2s ease .6s}
+.js .hero.text-in .scroll-cue{opacity:1}
+.scroll-cue{position:absolute;z-index:2;left:50%;bottom:0;width:1px;height:64px;background:rgba(246,243,237,.25);overflow:hidden}
+.scroll-cue::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--gold-light);animation:cue 2.6s var(--ease) infinite}
+@keyframes cue{to{top:100%}}
+
+/* ---------- Team / credibility (copy + count-up match the live site) ---------- */
+.cred{background:var(--cream);border-bottom:1px solid var(--hair-dark);overflow:hidden}
+.cred .wrap{padding-top:clamp(56px,8vw,88px);padding-bottom:clamp(56px,8vw,96px)}
+.cred-title{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--display-weight);font-size:clamp(32px,4vw,52px);line-height:1.12;letter-spacing:-.02em;color:var(--ink)}
+.cred-affiliation{margin:0 0 36px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.cred-items{display:grid;gap:30px;margin:0;padding:0;list-style:none}
+@media (min-width:900px){
+  .cred-items{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+}
+.cred-items li{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:20px 0 0;position:relative;color:var(--ink)}
+.cred-items li::before{content:"";position:absolute;top:0;left:0;width:56px;border-top:1px solid var(--gold-ink)}
+.cred-items strong{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,4.6vw,62px);line-height:1;letter-spacing:-.03em;color:var(--ink);white-space:nowrap}
+.cred-items span{text-transform:uppercase;letter-spacing:.115em;font-size:11px;font-weight:700;line-height:1.6;color:var(--muted);max-width:260px}
+.cred-note{margin:18px 0 0;max-width:46em}
+@media (max-width:700px){
+  .cred-affiliation{margin-bottom:24px;font-size:10.5px}
+  .cred-items{gap:18px}
+  .cred-items li{flex-direction:row;align-items:center;justify-content:space-between;gap:14px;padding-top:17px}
+  .cred-items strong{font-size:clamp(30px,9vw,38px)}
+  .cred-items span{text-align:right;max-width:165px;font-size:10px}
+}
+.motion-ready .cred-inner.scroll-rise{transform:translate3d(0,var(--rise-offset,0px),0);transition:transform .12s linear;will-change:transform}
+
+/* ---------- Section rhythm ---------- */
+.section{padding:clamp(96px,14vw,180px) 0}
+.section--dark{background:var(--navy);color:var(--cream)}
+.split{display:grid;gap:clamp(48px,7vw,110px)}
+@media (min-width:900px){.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}.split--5-7{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}.sticky{position:sticky;top:110px}}
+
+/* ---------- Valuation form (v2 form in brand colors) ---------- */
+.notes{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair-light)}
+.notes li{display:grid;grid-template-columns:52px 1fr;padding:22px 0;border-bottom:1px solid var(--hair-light);font-size:15px;line-height:1.65;color:var(--soft-light)}
+.notes b{display:block;margin-bottom:2px;font-weight:400;font-size:16px;color:var(--cream)}
+.notes .n{font-weight:300;font-size:13px;letter-spacing:.2em;color:var(--gold-light);padding-top:3px}
+
+.frame{position:relative;padding-top:clamp(28px,4vw,44px);border-top:1px solid rgba(246,243,237,.38)}
+.progress{display:flex;align-items:center;gap:18px;margin:0 0 38px}
+.progress-count{font-size:12px;letter-spacing:.2em;color:rgba(246,243,237,.55);white-space:nowrap}
+.progress-count [data-step-now]{color:var(--cream)}
+.progress-track{position:relative;flex:1;height:1px;background:var(--hair-light);overflow:hidden}
+.progress-fill{position:absolute;inset:0;background:var(--gold-light);transform-origin:left;transform:scaleX(.5);transition:transform .8s var(--ease)}
+.step{border:0;margin:0;padding:0;min-width:0}
+.step[hidden]{display:none}
+.step:not([hidden]){animation:stepIn .7s var(--ease) both}
+form[data-dir="back"] .step:not([hidden]){animation-name:stepBack}
+@keyframes stepIn{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:none}}
+@keyframes stepBack{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:none}}
+.q{margin:0 0 30px;padding:0;font-weight:300;font-size:clamp(26px,3.4vw,34px);line-height:1.2;color:var(--cream)}
+.q small{display:block;margin-top:10px;font-size:14px;font-weight:400;line-height:1.6;color:rgba(246,243,237,.6)}
+.f{position:relative;padding-top:22px;margin:0 0 30px}
+.f::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold-light);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.f:focus-within::after{transform:scaleX(1)}
+.in{display:block;width:100%;padding:10px 0 12px;border:0;border-bottom:1px solid rgba(246,243,237,.38);border-radius:0;background:transparent;color:var(--cream);font:inherit;font-size:18px;line-height:1.4;-webkit-appearance:none;appearance:none}
+.in:focus{outline:none}
+.in--lg{font-size:clamp(22px,2.8vw,28px);font-weight:300}
+.f>label{position:absolute;left:0;top:33px;font-size:16px;color:rgba(246,243,237,.6);pointer-events:none;transition:top .45s var(--ease),font-size .45s var(--ease),letter-spacing .45s var(--ease),color .3s}
+.f--lg>label{top:35px;font-size:clamp(22px,2.8vw,28px);font-weight:300}
+.in:focus+label,.in:not(:placeholder-shown)+label{top:0;font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light)}
+.in:user-invalid{border-bottom-color:#d79a8a}
+.cols{display:grid;gap:0 28px}
+@media (min-width:560px){.cols{grid-template-columns:1.5fr 1fr}}
+.locale{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:-14px 0 30px;font-size:14px;color:rgba(246,243,237,.6)}
+.locale button{padding:0;border:0;background:none;cursor:pointer;font:inherit;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light)}
+.collapse{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .6s var(--ease),opacity .4s}
+.collapse>*{overflow:hidden}
+.collapse.is-open{grid-template-rows:1fr;opacity:1}
+.slip{margin:0 0 34px;padding:22px 24px;border:1px solid var(--hair-light);background:rgba(216,193,155,.07)}
+.slip-label{display:block;margin-bottom:8px;font-size:10px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-light)}
+.slip-line{display:block;font-weight:300;font-size:22px;line-height:1.35;color:var(--cream)}
+.slip-line--sub{font-size:16px;color:rgba(246,243,237,.7)}
+.echo{transition:opacity .35s}.echo.is-empty{opacity:.45}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px;margin-top:8px}
+.btn{position:relative;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:0 30px;border:1px solid var(--gold-light);border-radius:0;background:transparent;color:var(--gold-light);font:inherit;font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;overflow:hidden;isolation:isolate;transition:color .5s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gold-light);transform:scaleY(0);transform-origin:bottom;transition:transform .55s var(--ease)}
+.btn:hover,.btn:focus-visible{color:var(--navy)}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleY(1)}
+.btn:hover .arrow{width:42px}
+.btn .arrow{transition:width .55s var(--ease)}
+.btn:focus-visible{outline:1px solid var(--gold-light);outline-offset:4px}
+.btn[disabled]{opacity:.5;cursor:wait}
+.text-btn{padding:6px 0;border:0;background:none;cursor:pointer;font:inherit;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,243,237,.55);transition:color .3s}
+.text-btn:hover{color:var(--cream)}
+.status{margin:18px 0 0;font-size:14px;color:rgba(246,243,237,.6)}
+.status--error{color:#e3b2a5}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.success[hidden]{display:none}
+.success:not([hidden]){animation:stepIn .9s var(--ease) both}
+.success h3{margin:0 0 18px;font-weight:300;font-size:clamp(34px,4.6vw,46px);line-height:1.1;color:var(--cream)}
+.success p{margin:0 0 14px;max-width:32em;color:var(--soft-light)}
+.success [data-show-if][hidden]{display:none}
+.rule{display:block;width:56px;height:1px;margin:0 0 30px;background:var(--gold-light)}
+
+/* ---------- Services: editorial list ---------- */
+.svc-group+.svc-group{margin-top:clamp(64px,8vw,96px)}
+.svc-title{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-ink)}
+.svc{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair-dark)}
+.svc li{border-bottom:1px solid var(--hair-dark)}
+.svc a,.svc .row{display:grid;grid-template-columns:44px 1fr;gap:8px 18px;padding:30px 0;text-decoration:none;color:inherit;position:relative}
+@media (min-width:760px){.svc a,.svc .row{grid-template-columns:56px minmax(0,1.25fr) minmax(0,1fr) 36px;align-items:baseline}}
+.svc .n{font-size:12px;letter-spacing:.2em;color:var(--gold-ink);padding-top:8px}
+.svc h3{margin:0;font-weight:300;font-size:clamp(24px,2.8vw,32px);line-height:1.2;color:var(--ink);transition:transform .6s var(--ease),color .3s}
+.svc p{grid-column:2;margin:0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:30em}
+@media (min-width:760px){.svc p{grid-column:auto}}
+.svc .go{display:none}
+@media (min-width:760px){.svc .go{display:block;justify-self:end;color:var(--gold-ink);opacity:0;transform:translateX(-12px);transition:opacity .4s,transform .6s var(--ease)}}
+.svc a::before{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--gold-ink);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
+.svc a:hover::before,.svc a:focus-visible::before{transform:scaleX(1)}
+.svc a:hover h3,.svc a:focus-visible h3{transform:translateX(10px);color:var(--gold-ink)}
+.svc a:hover .go,.svc a:focus-visible .go{opacity:1;transform:none}
+.svc a:focus-visible{outline:none}
+
+/* ---------- About ---------- */
+.about{background:var(--white)}
+.portrait{position:relative;aspect-ratio:1;background:var(--navy);display:grid;place-items:center;overflow:hidden;max-width:520px}
+.portrait::before{content:"";position:absolute;inset:18px;border:1px solid rgba(216,193,155,.45)}
+.portrait .big-mono{display:grid;place-items:center;width:clamp(140px,28vw,200px);aspect-ratio:1;border:1px solid var(--gold);border-radius:50%;font-weight:300;font-size:clamp(46px,7vw,68px);letter-spacing:.04em;color:var(--cream)}
+.portrait figcaption{position:absolute;left:0;right:0;bottom:28px;text-align:center;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(246,243,237,.7)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-meta{display:grid;gap:0;margin:40px 0 44px;padding:0;list-style:none;border-top:1px solid var(--hair-dark)}
+.about-meta li{display:flex;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid var(--hair-dark);font-size:14.5px}
+.about-meta span:first-child{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink);padding-top:3px}
+.about-meta span:last-child{text-align:right;color:var(--ink)}
+.quote{margin:0 0 34px;padding:0 0 0 26px;border-left:1px solid var(--gold-light);font-weight:300;font-size:clamp(21px,2.4vw,26px);line-height:1.5;color:var(--ink)}
+
+/* ---------- Teasers ---------- */
+.teasers{display:grid;border-top:1px solid var(--hair-dark)}
+@media (min-width:900px){.teasers{grid-template-columns:1fr 1fr}.teaser+.teaser{border-left:1px solid var(--hair-dark)}}
+.teaser{position:relative;display:block;padding:clamp(44px,6vw,80px) clamp(0px,4vw,64px) clamp(44px,6vw,80px) 0;text-decoration:none;color:inherit;border-bottom:1px solid var(--hair-dark)}
+.teaser+.teaser{padding-left:0}
+@media (min-width:900px){.teaser+.teaser{padding-left:clamp(32px,4vw,64px)}}
+.teaser h3{margin:0 0 18px;font-weight:300;font-size:clamp(30px,3.8vw,44px);line-height:1.1;color:var(--ink);transition:color .3s}
+.teaser p{margin:0 0 34px;max-width:28em;color:var(--body)}
+.teaser .cta{pointer-events:none}
+.teaser:hover h3{color:var(--gold-ink)}
+.teaser:hover .cta{gap:30px;color:var(--gold-ink);border-color:var(--gold-ink)}
+.teaser-k{display:block;margin-bottom:22px;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-ink)}
+
+/* ---------- FAQ accordion ---------- */
+.faq{border-top:1px solid var(--hair-dark)}
+.faq details{border-bottom:1px solid var(--hair-dark)}
+.faq summary{display:grid;grid-template-columns:1fr 18px;gap:24px;align-items:center;padding:28px 0;cursor:pointer;list-style:none;font-weight:300;font-size:clamp(20px,2.3vw,26px);line-height:1.35;color:var(--ink);transition:color .3s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--gold-ink)}
+.faq summary:focus-visible{outline:1px solid var(--gold-ink);outline-offset:4px}
+.plus{position:relative;width:16px;height:16px}
+.plus::before,.plus::after{content:"";position:absolute;left:0;top:50%;width:16px;height:1px;background:currentColor;transition:transform .5s var(--ease)}
+.plus::after{transform:rotate(90deg)}
+.faq details[open] .plus::after{transform:rotate(0)}
+.faq-body{overflow:hidden}
+.faq-body>div{padding:0 0 32px;max-width:44em;color:var(--body)}
+.faq-body p{margin:0 0 12px}
+.faq-src{margin-top:34px}
+
+/* ---------- Closing + footer ---------- */
+.closing{text-align:left}
+.closing .display{max-width:12em}
+.foot{background:var(--topbar);color:rgba(246,243,237,.7);font-size:14px}
+.foot .wrap{padding-top:clamp(72px,9vw,110px);padding-bottom:40px}
+.foot-grid{display:grid;gap:44px;padding-bottom:56px;border-bottom:1px solid var(--hair-light)}
+@media (min-width:900px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.foot h4{margin:0 0 18px;font-size:10.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-light)}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot li{margin:0 0 10px}
+.foot a{text-decoration:none;color:rgba(246,243,237,.82);transition:color .3s}
+.foot a:hover{color:var(--gold-light)}
+.foot-brand p{margin:20px 0 0;max-width:24em;line-height:1.7}
+.foot-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:28px;font-size:11.5px;letter-spacing:.06em;color:rgba(246,243,237,.5);line-height:1.7}
+
+/* ---------- Scroll reveal ---------- */
+.js [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease);transition-delay:var(--d,0s)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js [data-reveal],.hero .fade{opacity:1;transform:none}
+  .js .hero .fade,.js .hero .scroll-cue{opacity:1;transform:none}
+  .hero-video{display:none}
+  .js .hero-end,.js .hero.is-ended .hero-end{opacity:1;transform:none;animation:none}
+  .js .hero::after{opacity:1}
+  .menu-list a{transform:none}
+  .motion-ready .cred-inner.scroll-rise{transform:none;transition:none}
+}
+
+/* Phones: heading, then the form, then the intro copy (Jonathan's form-first rule) */
+@media (max-width:899px){
+  #valuation .split{gap:0}
+  #valuation .split>div:first-child{display:contents}
+  #valuation .split>div:first-child>.eyebrow{order:1}
+  #valuation .split>div:first-child>.display{order:2}
+  #valuation .split>.frame{order:3;margin:8px 0 48px}
+  #valuation .split>div:first-child>.lede{order:4}
+  #valuation .split>div:first-child>.notes{order:5}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===================== TOP BAR + HEADER ===================== -->
+<div class="topbar"><div class="wrap"><span>Woodland Hills &amp; the San Fernando Valley</span><span>CA DRE #02282844</span></div></div>
+
+<header class="site-head" id="siteHead">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Jonathan Lopez Real Estate home">
+      <span class="mono" aria-hidden="true">JL</span>
+      <span class="brand-name"><span>Jonathan Lopez</span><span>Real Estate</span></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-link" href="/free-sellers-guide">Seller’s Guide</a>
+      <a class="nav-link" href="/first-time-buyers.html">First-Time Buyers</a>
+      <a class="nav-link" href="/blog/index.html">Blog</a>
+      <a class="nav-contact" href="/contact.html">Contact</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top">
+    <a class="brand" href="/"><span class="mono" aria-hidden="true">JL</span><span class="brand-name"><span>Jonathan Lopez</span><span>Real Estate</span></span></a>
+    <button class="menu-close" type="button" aria-label="Close menu"></button>
+  </div>
+  <ul class="menu-list">
+    <li><a href="#valuation" data-close>Home value <small>01</small></a></li>
+    <li><a href="/free-sellers-guide">Seller’s Guide <small>02</small></a></li>
+    <li><a href="/first-time-buyers.html">First-Time Buyers <small>03</small></a></li>
+    <li><a href="/woodland-hills-market-update">Market update <small>04</small></a></li>
+    <li><a href="/search">Search homes <small>05</small></a></li>
+    <li><a href="/blog/index.html">Blog <small>06</small></a></li>
+    <li><a href="/about.html">About <small>07</small></a></li>
+    <li><a href="/contact.html">Contact <small>08</small></a></li>
+  </ul>
+  <div class="menu-foot"><span>Woodland Hills Realtor</span><a href="tel:8189347576">(818) 934-7576</a></div>
 </div>
+
+<main>
+
+<!-- ===================== 1. HERO ===================== -->
+<section class="hero on-dark" aria-labelledby="heroTitle">
+  <div class="hero-media" role="img" aria-label="Flying in over Woodland Hills to a home at dusk">
+    <img class="hero-end" src="/assets/hero-flyin-end.jpg" alt="" decoding="async">
+    <video class="hero-video" muted playsinline autoplay preload="auto"
+           poster="/assets/hero-flyin-poster.jpg"
+           data-src-desktop="/assets/hero-flyin.mp4"
+           data-src-mobile="/assets/hero-flyin-mobile.mp4"
+           disablepictureinpicture disableremoteplayback
+           aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="wrap">
+    <p class="eyebrow fade">Jonathan Lopez</p>
+    <h1 id="heroTitle" class="fade">Woodland Hills,<br>seen up close.</h1>
+    <p class="hero-lead fade">Real, local market knowledge for Woodland Hills and the surrounding San Fernando Valley. Not a Zestimate. Not a guess. Actual comps, actual guidance.</p>
+    <div class="hero-sub fade">
+      <a class="cta" href="#valuation">Request a private valuation <span class="arrow" aria-hidden="true"></span></a>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
 </section>
 
-<section class="group-proof" aria-labelledby="group-proof-title">
-<div class="group-proof-inner">
-<h2 id="group-proof-title">The Team Behind Your Move</h2>
-<p class="group-proof-affiliation">Jonathan Lopez | Jim Sandoval Group</p>
-<div class="group-proof-grid">
-<div class="group-proof-stat"><strong data-count-to="700" data-count-suffix="+">700+</strong><span>Homes sold by team leader Jim Sandoval</span></div>
-<div class="group-proof-stat"><strong data-count-to="0.01" data-count-prefix="Top " data-count-suffix="%" data-count-decimals="2">Top 0.01%</strong><span>Agents nationwide, as reported by the Jim Sandoval Group</span></div>
-<div class="group-proof-stat"><strong data-count-to="20" data-count-suffix="+ years">20+ years</strong><span>Combined real estate experience</span></div>
-</div>
-<p class="group-proof-source">Figures reflect Jim Sandoval and the <a href="https://jimsandovalgroup.com/" target="_blank" rel="noopener noreferrer">group's published claims</a>, not Jonathan's individual sales or tenure.</p>
-</div>
+<!-- ===================== 2. THE TEAM BEHIND YOUR MOVE ===================== -->
+<section class="cred" aria-labelledby="teamTitle">
+  <div class="wrap cred-inner">
+    <h2 class="cred-title" id="teamTitle">The Team Behind Your Move</h2>
+    <p class="cred-affiliation">Jonathan Lopez | Jim Sandoval Group</p>
+    <ul class="cred-items">
+      <li>
+        <strong data-count-to="700" data-count-suffix="+">700+</strong>
+        <span>Homes sold by team leader Jim Sandoval</span>
+      </li>
+      <li>
+        <strong data-count-to="0.01" data-count-prefix="Top " data-count-suffix="%" data-count-decimals="2">Top 0.01%</strong>
+        <span>Agents nationwide, as reported by the Jim Sandoval Group</span>
+      </li>
+      <li>
+        <strong data-count-to="20" data-count-suffix="+ years">20+ years</strong>
+        <span>Combined real estate experience</span>
+      </li>
+    </ul>
+    <p class="cred-note fine">Figures reflect Jim Sandoval and the <a href="https://jimsandovalgroup.com/" target="_blank" rel="noopener">group’s published claims</a>, not Jonathan’s individual sales or tenure.</p>
+  </div>
 </section>
 
-<section class="services">
-<div class="services-inner">
-<h2>How I Can Help</h2>
-<div class="service-grid">
-<div class="service-card">
-<h3>Home Selling Consultation</h3>
-<p>Strategy session for homeowners considering selling in Woodland Hills, Northridge, Burbank, Encino, Tarzana, Calabasas, and the San Fernando Valley.</p>
-</div>
-<div class="service-card">
-<h3>Buyer Representation</h3>
-<p>Guidance for homebuyers searching for properties across the San Fernando Valley and Greater Los Angeles.</p>
-</div>
-<div class="service-card">
-<h3>Home Valuation</h3>
-<p>Local pricing guidance for homeowners who want to understand their property's current market value, based on real comps, not an algorithm.</p>
-</div>
-<div class="service-card">
-<h3>Listing Agent Services</h3>
-<p>Professional marketing, pricing strategy, negotiation support, and transaction coordination from listing to close.</p>
-</div>
-<div class="service-card">
-<h3>Luxury Home Marketing</h3>
-<p>High-end listing strategy backed by the Jim Sandoval Group's marketing systems and local expertise.</p>
-</div>
-<div class="service-card">
-<h3>Relocation Real Estate Help</h3>
-<p>Support for clients moving into or out of Los Angeles and the San Fernando Valley.</p>
-</div>
-<div class="service-card">
-<h3>Inherited Home Sale Guidance</h3>
-<p>Real estate side guidance for heirs navigating probate timing, pricing, and the sale process for an inherited property.</p>
-</div>
-<div class="service-card">
-<h3>First-Time Home Buyer Help</h3>
-<p>Step-by-step guidance for buyers navigating financing, offers, inspections, and closing for the first time.</p>
-</div>
-</div>
-</div>
+<!-- ===================== 3. VALUATION (concierge form) ===================== -->
+<section class="section section--dark on-dark" id="valuation" aria-labelledby="valTitle">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow" data-reveal>A private valuation</p>
+      <h2 class="display display--m" id="valTitle" data-reveal style="--d:.08s">What’s your <em>home</em> worth?</h2>
+      <p class="lede" data-reveal style="--d:.16s">A considered estimate, prepared personally from the homes that have actually sold around yours. Not an algorithm, and not a Zestimate.</p>
+      <ol class="notes" data-reveal style="--d:.24s">
+        <li><span class="n">01</span><span><b>Comparable sales, read closely</b>Recent closings near you, adjusted for the details that matter.</span></li>
+        <li><span class="n">02</span><span><b>Prepared by me, not a program</b>Jonathan Lopez, Realtor, Jim Sandoval Group.</span></li>
+        <li><span class="n">03</span><span><b>Delivered privately</b>By email, directly from me.</span></li>
+      </ol>
+    </div>
+
+    <div class="frame" data-holder data-reveal style="--d:.2s">
+      <form data-jl-form data-placement="home" data-lead-type="Home Value Request" data-source="Website - Home Value" data-subject="Home value request" novalidate>
+        <div class="progress" aria-hidden="true">
+          <span class="progress-count"><span data-step-now>01</span> / <span data-step-total>02</span></span>
+          <span class="progress-track"><span class="progress-fill"></span></span>
+        </div>
+
+        <fieldset class="step">
+          <legend class="q">To begin, who should I prepare this for?</legend>
+          <div class="f">
+            <input class="in" id="hv-name" name="Full Name" type="text" autocomplete="name" placeholder=" " required>
+            <label for="hv-name">Your name</label>
+          </div>
+          <div class="f">
+            <input class="in" id="hv-email" name="Email Address" type="email" autocomplete="email" placeholder=" " required>
+            <label for="hv-email">Email address</label>
+          </div>
+          <div class="actions">
+            <button class="btn" type="submit">Continue <span class="arrow" aria-hidden="true"></span></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" hidden>
+          <legend class="q"><span data-thanks>Thank you. Your request is in.</span><small>Optional: add the address and I can begin right away.</small></legend>
+          <div class="slip" aria-hidden="true">
+            <span class="slip-label">Prepared for</span>
+            <span class="slip-line"><span class="echo" data-echo="Full Name" data-empty="Your name"></span></span>
+            <span class="slip-line slip-line--sub"><span class="echo" data-echo="Property Address" data-empty="Your residence"></span>, <span class="echo" data-echo="City" data-empty="City"></span></span>
+          </div>
+          <div class="f f--lg">
+            <input class="in in--lg" id="hv-address" name="Property Address" type="text" autocomplete="address-line1" placeholder=" ">
+            <label for="hv-address">Street address</label>
+          </div>
+          <div class="cols">
+            <div class="f">
+              <input class="in" id="hv-city" name="City" type="text" autocomplete="address-level2" placeholder=" ">
+              <label for="hv-city">City</label>
+            </div>
+            <div class="f">
+              <input class="in" id="hv-zip" name="ZIP" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" placeholder=" ">
+              <label for="hv-zip">ZIP</label>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn" type="submit">Send my address <span class="arrow" aria-hidden="true"></span></button>
+            <button class="text-btn" type="button" data-skip-submit>Skip, I’m all set</button>
+          </div>
+        </fieldset>
+
+        <textarea name="Message" class="fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0"></textarea>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="status" role="status" aria-live="polite"></p>
+        <p class="fine" style="margin-top:22px"><a href="/privacy-policy.html">Privacy Policy</a>. If your property is currently listed, please disregard.</p>
+      </form>
+
+      <div class="success" hidden>
+        <span class="rule"></span>
+        <h3>Thank you<span data-first-name></span>.</h3>
+        <p data-show-if="Property Address">I’ll study the recent sales around <span data-fill="Property Address"></span> and send your valuation by email.</p>
+        <p data-show-if="!Property Address">I’ll be in touch by email shortly to confirm the address, then prepare your valuation.</p>
+        <p>Should you prefer to talk it through, I’m at <a class="tlink" href="tel:8189347576">(818) 934-7576</a>.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="about-teaser">
-<div class="about-inner">
-<div class="about-copy">
-<p class="about-kicker">A local point of contact</p>
-<h2>Meet Jonathan Lopez</h2>
-<p>I help Woodland Hills homeowners make sense of their options with a clear plan and a close look at the local market. As part of the Jim Sandoval Group, I can bring the team's experience to your move while staying personally involved in the details.</p>
-<p class="about-credential">Jim Sandoval Group · CA DRE #02282844</p>
-<a href="about.html">Get to know Jonathan →</a>
-</div>
-</div>
+<!-- ===================== 4. SERVICES (editorial list) ===================== -->
+<section class="section" aria-labelledby="svcTitle">
+  <div class="wrap split split--5-7">
+    <div class="sticky">
+      <p class="eyebrow" data-reveal>How I can help</p>
+      <h2 class="display display--m" id="svcTitle" data-reveal style="--d:.08s">Representation, <em>start to close.</em></h2>
+      <p class="lede" data-reveal style="--d:.16s">Listings first, with buyer representation across Woodland Hills and the San Fernando Valley, backed by the Jim Sandoval Group.</p>
+    </div>
+
+    <div>
+      <div class="svc-group" data-reveal>
+        <p class="svc-title">For homeowners</p>
+        <ul class="svc">
+          <li><a href="#valuation"><span class="n">01</span><h3>Home valuation</h3><p>Pricing guidance built from real comparable sales, not an algorithm.</p><span class="go arrow" aria-hidden="true"></span></a></li>
+          <li><a href="/selling"><span class="n">02</span><h3>Selling consultation</h3><p>A strategy session for Woodland Hills homeowners weighing a sale and its timing.</p><span class="go arrow" aria-hidden="true"></span></a></li>
+          <li><a href="/selling"><span class="n">03</span><h3>Listing representation</h3><p>Marketing, pricing strategy, negotiation and coordination from listing to close.</p><span class="go arrow" aria-hidden="true"></span></a></li>
+          <li><a href="/contact.html"><span class="n">04</span><h3>Luxury home marketing</h3><p>High-end listing strategy backed by the Jim Sandoval Group’s marketing systems.</p><span class="go arrow" aria-hidden="true"></span></a></li>
+          <li><a href="/contact.html"><span class="n">05</span><h3>Inherited homes</h3><p>Calm guidance for heirs on timing, pricing and the sale of an inherited property.</p><span class="go arrow" aria-hidden="true"></span></a></li>
+        </ul>
+      </div>
+
+      <div class="svc-group" data-reveal>
+        <p class="svc-title">For buyers &amp; moves</p>
+        <ul class="svc">
+          <li><a href="/contact.html"><span class="n">06</span><h3>Buyer representation</h3><p>Guidance for buyers across the San Fernando Valley and Greater Los Angeles.</p><span class="go arrow" aria-hidden="true"></span></a></li>
+          <li><a href="/first-time-buyers.html"><span class="n">07</span><h3>First-time buyers</h3><p>Financing, offers, inspections and closing, explained step by step.</p><span class="go arrow" aria-hidden="true"></span></a></li>
+          <li><a href="/contact.html"><span class="n">08</span><h3>Relocation</h3><p>Support for moves into or out of Los Angeles and the San Fernando Valley.</p><span class="go arrow" aria-hidden="true"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="faq" id="faq" aria-labelledby="faq-title">
-<div class="faq-inner">
-<h2 id="faq-title">Woodland Hills Seller FAQ</h2>
-<details class="faq-item"><summary>Who is a good real estate agent in Woodland Hills?</summary><p>Jonathan Lopez is a residential real estate agent in Woodland Hills, CA 91367 with the Jim Sandoval Group at Park Regency Realty (CA DRE #02282844). He works with buyers and sellers across the San Fernando Valley, with a focus on helping Woodland Hills homeowners sell. You can reach him at (818) 934-7576.</p></details>
-<details class="faq-item"><summary>How do I find out what my Woodland Hills home is worth?</summary><p>Online estimates like a Zestimate are a starting point, not a price. The most reliable answer comes from comparing your home with recent nearby sales of similar size, condition, and location. Jonathan prepares a free home valuation based on real Woodland Hills comps. Call (818) 934-7576 or use the contact page to request one.</p></details>
-<details class="faq-item"><summary>How long do homes take to sell in 91367?</summary><p>According to Redfin, homes in Woodland Hills sold after a median of 47 days on the market over the three months ending September 2026, compared to 59 days a year earlier. Timing for any one home depends on its price, condition, and location.</p></details>
-<details class="faq-item"><summary>What are homes selling for in Woodland Hills right now?</summary><p>Redfin reports a median sale price of $1,215,659 in Woodland Hills over the three months ending September 2026, up 0.2% from a year earlier. Homes sold for about 99.0% of list price on average. Because the median mixes condos, townhomes, and houses, your own home&#x27;s value is best judged against similar nearby sales.</p></details>
-<details class="faq-item"><summary>Is now a good time to sell my Woodland Hills home?</summary><p>It depends on your goals and your home. Redfin rates Woodland Hills as somewhat competitive as of September 2026: some homes get multiple offers, while about a third of listings had a price drop. Pricing correctly from day one matters. Jonathan can walk you through the current numbers for your street.</p></details>
-<details class="faq-item"><summary>Do you work with buyers too, or only sellers?</summary><p>Both. Jonathan focuses on sellers but also represents buyers, including first-time buyers, across Woodland Hills, Tarzana, Encino, Calabasas, and the rest of the San Fernando Valley.</p></details>
-<p class="faq-source">Market figures: <a href="https://www.redfin.com/neighborhood/10848/CA/Los-Angeles/Woodland-Hills/housing-market" target="_blank" rel="noopener noreferrer">Redfin Woodland Hills housing market</a>, three months ending September 2026.</p>
-</div>
+<!-- ===================== 5. ABOUT ===================== -->
+<section class="section about" aria-labelledby="aboutTitle">
+  <div class="wrap split">
+    <figure class="portrait" data-reveal style="margin:0">
+      <!-- No headshot exists on the live site (homepage, about, or /assets). Keep the JL monogram until Jonathan supplies one. -->
+      <span class="big-mono" aria-hidden="true">JL</span>
+      <figcaption>Woodland Hills Realtor</figcaption>
+    </figure>
+
+    <div>
+      <p class="eyebrow" data-reveal>A local point of contact</p>
+      <h2 class="display display--m" id="aboutTitle" data-reveal style="--d:.08s">Meet Jonathan Lopez</h2>
+      <blockquote class="quote" data-reveal style="--d:.14s">I help Woodland Hills homeowners make sense of their options with a clear plan and a close look at the local market.</blockquote>
+      <p class="lede" data-reveal style="--d:.2s;margin-bottom:0">As part of the Jim Sandoval Group at Park Regency Realty, I bring the team’s experience to your move while staying personally involved in every detail.</p>
+      <ul class="about-meta" data-reveal style="--d:.26s">
+        <li><span>Focus</span><span>Woodland Hills sellers</span></li>
+        <li><span>Team</span><span>Jim Sandoval Group</span></li>
+        <li><span>Brokerage</span><span>Park Regency Realty</span></li>
+        <li><span>License</span><span>CA DRE #02282844</span></li>
+      </ul>
+      <a class="cta" href="/about.html" data-reveal style="--d:.3s">Get to know Jonathan <span class="arrow" aria-hidden="true"></span></a>
+    </div>
+  </div>
 </section>
 
-</main><footer class="footer"><div class="wrap"><div>Jonathan Lopez, Woodland Hills Realtor | Jim Sandoval Group | CA DRE #02282844<br>(818) 934-7576</div><div class="footer-links"><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy Policy</a></div></div></footer><script defer src="/assets/nav.js?v=20261031"></script>
-</body></html>
+<!-- ===================== 6. TEASERS ===================== -->
+<section class="section" aria-label="Neighborhood resources" style="padding-bottom:clamp(64px,9vw,120px)">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>For Woodland Hills homeowners</p>
+    <div class="teasers">
+      <a class="teaser" href="/street-report" data-reveal>
+        <span class="teaser-k">The Street Report</span>
+        <h3>What sold on your street.</h3>
+        <p>A private summary of recent sales on and around your street, prepared from the MLS and sent by email. Complimentary, with quarterly updates if you’d like.</p>
+        <span class="cta">Request your report <span class="arrow" aria-hidden="true"></span></span>
+      </a>
+      <a class="teaser" href="/ask" data-reveal style="--d:.12s">
+        <span class="teaser-k">Ask Your Neighbor</span>
+        <h3>Real answers for Woodland Hills homeowners.</h3>
+        <p>Property taxes, an inherited home, insurance, timing a sale. Ask anything, and I’ll answer personally.</p>
+        <span class="cta">Ask a question <span class="arrow" aria-hidden="true"></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. FAQ ===================== -->
+<section class="section" aria-labelledby="faqTitle" style="padding-top:clamp(64px,9vw,120px)">
+  <div class="wrap split split--5-7">
+    <div class="sticky">
+      <p class="eyebrow" data-reveal>Questions</p>
+      <h2 class="display display--m" id="faqTitle" data-reveal style="--d:.08s">Woodland Hills seller <em>FAQ</em></h2>
+    </div>
+    <div>
+      <div class="faq" data-reveal>
+        <details>
+          <summary>Who is a good real estate agent in Woodland Hills?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><div><p>Jonathan Lopez is a residential real estate agent in Woodland Hills, CA 91367, with the Jim Sandoval Group at Park Regency Realty (CA DRE #02282844). He works with buyers and sellers across the San Fernando Valley, with a focus on Woodland Hills homeowners. Reach him at <a class="tlink" href="tel:8189347576">(818) 934-7576</a>.</p></div></div>
+        </details>
+        <details>
+          <summary>How do I find out what my Woodland Hills home is worth?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><div><p>Online estimates like a Zestimate are a starting point, not a price. The most dependable valuation compares your home with recent nearby sales of similar size, condition and location. <a class="tlink" href="#valuation">Request a private valuation</a> and I’ll prepare one from local comparables.</p></div></div>
+        </details>
+        <details>
+          <summary>How long do homes take to sell in 91367?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><div><p>According to Redfin, homes in Woodland Hills sold after a median of 47 days on the market in the three months ending September 2026, down from 59 days a year earlier. Your own timing depends on price, condition and location.</p></div></div>
+        </details>
+        <details>
+          <summary>What are homes selling for in Woodland Hills right now?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><div><p>Redfin reports a median sale price of $1,215,659 in Woodland Hills for the three months ending September 2026, up 0.2% year over year, with homes selling for about 99.0% of list price. Because that median mixes condos, townhomes and houses, your home’s value is best judged against similar nearby sales.</p></div></div>
+        </details>
+        <details>
+          <summary>Is now a good time to sell my Woodland Hills home?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><div><p>Redfin rated Woodland Hills as somewhat competitive as of September 2026. Some homes draw multiple offers, while about a third of listings saw price cuts. Pricing correctly from day one matters most. I’m happy to walk through the current numbers for your street.</p></div></div>
+        </details>
+        <details>
+          <summary>Do you work with buyers too, or only sellers?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><div><p>Both. Jonathan focuses on sellers but also represents buyers, including first-time buyers, in Woodland Hills, Tarzana, Encino, Calabasas and across the San Fernando Valley.</p></div></div>
+        </details>
+      </div>
+      <p class="fine faq-src">Market figures: <a href="https://www.redfin.com/neighborhood/10848/CA/Los-Angeles/Woodland-Hills/housing-market" rel="noopener">Redfin Woodland Hills housing market</a>, three months ending September 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. CLOSING ===================== -->
+<section class="section section--dark on-dark closing" aria-labelledby="closeTitle">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>When you’re ready</p>
+    <h2 class="display" id="closeTitle" data-reveal style="--d:.08s">A quiet conversation about your <em>next move.</em></h2>
+    <div class="actions" data-reveal style="--d:.16s;gap:22px 48px">
+      <a class="cta" href="tel:8189347576">Call (818) 934-7576 <span class="arrow" aria-hidden="true"></span></a>
+      <a class="cta" href="/contact.html">Write to Jonathan <span class="arrow" aria-hidden="true"></span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/"><span class="mono" aria-hidden="true">JL</span><span class="brand-name"><span>Jonathan Lopez</span><span>Real Estate</span></span></a>
+        <p>Woodland Hills Realtor with the Jim Sandoval Group at Park Regency Realty.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:8189347576">(818) 934-7576</a></li>
+          <li><a href="sms:8189347576">Text Jonathan</a></li>
+          <li><a href="/contact.html">Contact form</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For homeowners</h4>
+        <ul>
+          <li><a href="#valuation">Home valuation</a></li>
+          <li><a href="/free-sellers-guide">Seller’s Guide</a></li>
+          <li><a href="/woodland-hills-market-update">Market update</a></li>
+          <li><a href="/street-report">The Street Report</a></li>
+          <li><a href="/ask">Ask Your Neighbor</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/first-time-buyers.html">First-Time Buyers</a></li>
+          <li><a href="/search">Search homes</a></li>
+          <li><a href="/blog/index.html">Blog</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>Jonathan Lopez, CA DRE #02282844 &middot; Jim Sandoval Group &middot; Park Regency Realty &middot; Equal Housing Opportunity</span>
+      <span><a href="/privacy-policy.html">Privacy Policy</a> &middot; &copy; <span id="yr">2026</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  /* ---------- SETTINGS ---------- */
+  var CONFIG={accessKey:"1e05f524-7137-4686-aa6b-d3e659f76eb2",fromName:"Jonathan Lopez Real Estate Website",endpoint:"https://api.web3forms.com/submit"};
+
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.add("js");
+  var yr=$("#yr"); if(yr) yr.textContent=new Date().getFullYear();
+
+  /* ---------- Hero fly-in video ----------
+     Plays once (muted, inline). ~1.5s before the end the copy rises in.
+     On 'ended' the final frame (hero-flyin-end.jpg) crossfades in over 0.6s and drifts 1.0 -> 1.05.
+     Reduced motion, Data Saver, autoplay blocked or a load error: end frame + copy shown right away. */
+  (function(){
+    var h=$(".hero"),v=$(".hero-video");
+    if(!h)return;
+    var textShown=false,settled=false,guard=null,ceiling=null;
+    function showText(){if(textShown)return;textShown=true;h.classList.add("text-in")}
+    function settle(drift){
+      if(settled)return;settled=true;
+      clearTimeout(guard);clearTimeout(ceiling);
+      h.classList.add(drift&&!reduce?"is-ended":"is-static");
+      showText();
+    }
+    function fallback(){
+      if(v){try{v.pause()}catch(e){}}
+      settle(true);
+    }
+    var saveData=navigator.connection&&navigator.connection.saveData;
+    if(reduce||!v||saveData){
+      if(v){v.removeAttribute("autoplay");v.parentNode.removeChild(v)}
+      h.classList.add("is-static");showText();return;
+    }
+    v.muted=true;v.defaultMuted=true;v.playsInline=true;v.loop=false;v.controls=false;
+    v.src=window.matchMedia("(max-width: 767px)").matches?v.getAttribute("data-src-mobile"):v.getAttribute("data-src-desktop");
+    v.addEventListener("error",fallback);
+    v.addEventListener("timeupdate",function(){
+      if(v.duration&&isFinite(v.duration)&&v.duration-v.currentTime<=1.5)showText();
+    });
+    v.addEventListener("ended",function(){settle(true)});
+    v.addEventListener("loadedmetadata",function(){
+      // Safety net if the stream stalls mid-dive: settle a few seconds after it should have ended
+      if(isFinite(v.duration)){clearTimeout(ceiling);ceiling=setTimeout(function(){settle(true)},(v.duration+4)*1000)}
+    });
+    v.addEventListener("playing",function(){clearTimeout(guard)},{once:true});
+    // If nothing has started playing within 4s (blocked or very slow), show the end frame + copy
+    guard=setTimeout(function(){if(v.paused||v.currentTime===0)fallback()},4000);
+    var p=v.play();
+    if(p&&typeof p.catch==="function")p.catch(fallback);
+  })();
+
+  /* ---------- Header: becomes solid after the hero, hides on scroll down ---------- */
+  var head=$("#siteHead"),hero=$(".hero"),lastY=0;
+  function onScroll(){
+    var y=window.scrollY,limit=hero?hero.offsetHeight*0.6:200;
+    if(y>limit){head.classList.add("is-fixed");head.classList.toggle("is-hidden",y>lastY&&y>limit+200)}
+    else{head.classList.remove("is-fixed","is-hidden")}
+    lastY=y;
+  }
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+  /* ---------- Menu ---------- */
+  var menu=$("#menu"),openBtn=$(".menu-btn"),closeBtn=$(".menu-close");
+  function setMenu(open){menu.classList.toggle("is-open",open);openBtn.setAttribute("aria-expanded",String(open));document.body.style.overflow=open?"hidden":"";if(open)setTimeout(function(){closeBtn.focus()},50);else openBtn.focus()}
+  openBtn.addEventListener("click",function(){setMenu(true)});
+  closeBtn.addEventListener("click",function(){setMenu(false)});
+  $$("[data-close]",menu).forEach(function(a){a.addEventListener("click",function(){setMenu(false)})});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&menu.classList.contains("is-open"))setMenu(false)});
+
+  /* ---------- Scroll reveal ---------- */
+  var rv=$$("[data-reveal]");
+  if(reduce||!("IntersectionObserver" in window)){rv.forEach(function(e){e.classList.add("is-in")})}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("is-in");io.unobserve(en.target)}})},{rootMargin:"0px 0px -8% 0px",threshold:.08});rv.forEach(function(e){io.observe(e)})}
+
+  /* ---------- Team stats: count-up + slide-up, matching live /assets/scroll.js ---------- */
+  var credInner=$(".cred-inner");
+  if(credInner && !reduce && "IntersectionObserver" in window){
+    document.documentElement.classList.add("motion-ready");
+    credInner.classList.add("scroll-rise");
+    var updateRise=function(){
+      var viewport=window.innerHeight;
+      var distance=window.innerWidth<=710?90:120;
+      var sectionTop=credInner.closest("section").getBoundingClientRect().top;
+      var progress=Math.max(0,Math.min(1,(viewport*0.92-sectionTop)/(viewport*0.52)));
+      var eased=(1-Math.cos(Math.PI*progress))/2;
+      credInner.style.setProperty("--rise-offset",Math.round(distance*(1-eased))+"px");
+    };
+    var risePending=false;
+    var scheduleRise=function(){
+      if(risePending)return;
+      risePending=true;
+      requestAnimationFrame(function(){updateRise();risePending=false});
+    };
+    updateRise();
+    window.addEventListener("scroll",scheduleRise,{passive:true});
+    window.addEventListener("resize",scheduleRise);
+
+    var countObserver=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting)return;
+        var el=entry.target;
+        countObserver.unobserve(el);
+        var end=Number(el.dataset.countTo);
+        var decimals=Number(el.dataset.countDecimals||0);
+        var prefix=el.dataset.countPrefix||"";
+        var suffix=el.dataset.countSuffix||"";
+        var duration=3200;
+        var start;
+        var render=function(value){
+          var number=decimals?value.toFixed(decimals):Math.round(value).toLocaleString("en-US");
+          el.textContent=prefix+number+suffix;
+        };
+        var frame=function(time){
+          if(start===undefined)start=time;
+          var progress=Math.min((time-start)/duration,1);
+          var eased=1-Math.pow(1-progress,2);
+          render(progress===1?end:end*eased);
+          if(progress<1)requestAnimationFrame(frame);
+        };
+        requestAnimationFrame(frame);
+      });
+    },{threshold:0.45});
+
+    var armCountsOnScroll=function(){
+      if(window.scrollY<120)return;
+      window.removeEventListener("scroll",armCountsOnScroll);
+      $$(".cred-items [data-count-to]").forEach(function(el){countObserver.observe(el)});
+    };
+    window.addEventListener("scroll",armCountsOnScroll,{passive:true});
+  }
+
+  /* ---------- FAQ: animated accordion ---------- */
+  $$(".faq details").forEach(function(d){
+    var s=$("summary",d),b=$(".faq-body",d);
+    s.addEventListener("click",function(e){
+      if(reduce)return;
+      e.preventDefault();
+      if(d.open){
+        b.style.height=b.scrollHeight+"px";
+        requestAnimationFrame(function(){b.style.transition="height .55s cubic-bezier(.22,.7,.18,1)";b.style.height="0px"});
+        b.addEventListener("transitionend",function t(){d.open=false;b.style.cssText="";b.removeEventListener("transitionend",t)});
+      }else{
+        d.open=true;b.style.height="0px";
+        requestAnimationFrame(function(){b.style.transition="height .6s cubic-bezier(.22,.7,.18,1)";b.style.height=b.scrollHeight+"px"});
+        b.addEventListener("transitionend",function t(){b.style.cssText="";b.removeEventListener("transitionend",t)});
+      }
+    });
+  });
+
+  /* ---------- Valuation form ----------
+     Same delivery as the live forms: JSON POST to Web3Forms + the native "submit" event the
+     existing FUB pixel reads (visible fields by name + the off-screen "Message" note).
+     Step 1 (name + email) sends right away; step 2 adds the optional address.
+     ?preview=1 skips every real send. */
+  var PREVIEW=/[?&]preview=1\b/.test(location.search);
+  function clean(v){return String(v||"").toLowerCase().replace(/[^a-z0-9-]/g,"-").replace(/-+/g,"-").replace(/^-|-$/g,"").slice(0,60)}
+  function urlSrc(){try{return clean(new URLSearchParams(location.search).get("src"))}catch(e){return ""}}
+  function setHidden(f,n,v){var el=f.querySelector("input[type=hidden][name='"+n+"']");if(!el){el=document.createElement("input");el.type="hidden";el.name=n;f.appendChild(el)}el.value=v}
+  function pad(n){return (n<10?"0":"")+n}
+  function post(d){
+    if(PREVIEW){if(window.console)console.log("[preview] would send",Object.keys(d));return Promise.resolve()}
+    return fetch(CONFIG.endpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)})
+      .then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(!r.ok||j.success===false)throw new Error("fail")})});
+  }
+
+  $$("form[data-jl-form]").forEach(function(form){
+    var placement=form.getAttribute("data-placement")||"home",src=urlSrc()||placement;
+    var source=(form.getAttribute("data-source")||"Website")+" ("+placement+") - src: "+src;
+    setHidden(form,"src",src);setHidden(form,"placement",placement);setHidden(form,"page",location.pathname);setHidden(form,"source",source);
+    var steps=$$(".step",form),fill=$(".progress-fill",form),now=$("[data-step-now]",form),total=$("[data-step-total]",form),cur=0;
+    var note=$("textarea[name='Message']",form),holder=form.closest("[data-holder]");
+    if(total)total.textContent=pad(steps.length);
+    function show(i,dir){form.setAttribute("data-dir",dir||"fwd");steps.forEach(function(s,n){s.hidden=n!==i});cur=i;if(fill)fill.style.transform="scaleX("+((i+1)/steps.length)+")";if(now)now.textContent=pad(i+1);
+      if(i>0){var first=steps[i].querySelector("input:not([type=hidden]):not([type=checkbox])");if(first)setTimeout(function(){first.focus({preventScroll:true})},reduce?0:280)}}
+    function valid(i){var fs=$$("input:not([type=hidden]):not([name=botcheck])",steps[i]);for(var k=0;k<fs.length;k++){if(fs[k].required&&!fs[k].value.trim())fs[k].value="";if(!fs[k].checkValidity()){fs[k].reportValidity();return false}}return true}
+    function val(n){var el=form.querySelector("[name='"+n+"']");return el?(el.value||"").trim():""}
+    function data(){return{"Full Name":val("Full Name"),"Email Address":val("Email Address"),"Property Address":val("Property Address"),City:val("City"),ZIP:val("ZIP")}}
+    function first(d){return (d["Full Name"].split(/\s+/)[0])||""}
+    function full(d){var t=[d.City,d.ZIP?"CA "+d.ZIP:""].filter(Boolean).join(", ");return d["Property Address"]?(t?d["Property Address"]+", "+t:d["Property Address"]):""}
+    show(0);
+
+    var echoes=$$("[data-echo]",holder);
+    function echo(){echoes.forEach(function(t){var v=val(t.getAttribute("data-echo"));t.textContent=v||t.getAttribute("data-empty")||"";t.classList.toggle("is-empty",!v)})}
+    form.addEventListener("input",echo);echo();
+
+    function finish(d){
+      var ok=$(".success",holder);
+      $$("[data-first-name]",ok).forEach(function(n){var f=first(d);n.textContent=f?", "+f:""});
+      $$("[data-show-if]",ok).forEach(function(n){var c=n.getAttribute("data-show-if"),neg=c.charAt(0)==="!",k=neg?c.slice(1):c,has=!!d[k];n.hidden=neg?has:!has});
+      $$("[data-fill]",ok).forEach(function(n){n.textContent=d[n.getAttribute("data-fill")]||""});
+      form.hidden=true;ok.hidden=false;ok.setAttribute("tabindex","-1");ok.focus({preventScroll:true});
+      if(holder.getBoundingClientRect().top<0)holder.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+    }
+
+    form.addEventListener("click",function(e){
+      var t=e.target.closest("button");if(!t||!form.contains(t))return;
+      if(t.hasAttribute("data-skip-submit")){e.preventDefault();["Property Address","City","ZIP"].forEach(function(n){var f=form.querySelector("[name='"+n+"']");if(f)f.value=""});finish(data())}
+    });
+    form.addEventListener("submit",function(e){
+      e.preventDefault();
+      if(form.__busy){e.stopImmediatePropagation();return}
+      if(!valid(cur)){e.stopImmediatePropagation();return}
+      var bot=form.querySelector("[name=botcheck]");if(bot&&bot.checked)return;
+      var d=data(),stage2=cur===1;
+      if(stage2&&!d["Property Address"]){finish(d);return}
+      var lead=(form.getAttribute("data-lead-type")||"Website lead")+(stage2?" - Address":"");
+      var parts=[source,lead];if(stage2)parts.push(full(d),"Address added");
+      var msg=parts.join(" - ");if(note)note.value=msg;   // read by the FUB pixel on this same submit
+      var out={access_key:CONFIG.accessKey,from_name:CONFIG.fromName,subject:(form.getAttribute("data-subject")||lead)+(stage2?" - address added":"")+" | src: "+src,
+        "Full Name":d["Full Name"],"Email Address":d["Email Address"],source:source,src:src,placement:placement,page:location.pathname,lead_type:lead,Message:msg};
+      if(stage2){out["Property Address"]=d["Property Address"];out.City=d.City;out.ZIP=d.ZIP}
+      var btns=$$("button",form),status=$(".status",form);
+      form.__busy=true;btns.forEach(function(b){b.disabled=true});if(status){status.className="status";status.textContent="Sending…"}
+      post(out).then(function(){
+        form.__busy=false;btns.forEach(function(b){b.disabled=false});if(status)status.textContent="";
+        if(!stage2){var th=$("[data-thanks]",form),f=first(d);if(th)th.textContent=f?"Thank you, "+f+". Your request is in.":"Thank you. Your request is in.";show(1,"fwd")}
+        else finish(d);
+      }).catch(function(){form.__busy=false;btns.forEach(function(b){b.disabled=false});if(status){status.className="status status--error";status.innerHTML="That didn’t go through. Please try again, or call <a href=\"tel:8189347576\">(818) 934-7576</a>."}});
+    });
+  });
+})();
+</script>
+</body>
+</html>
