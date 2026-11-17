@@ -65,6 +65,7 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 </script>
 <!-- end deferred FUB Widget Tracker Code -->
 <script defer src="/assets/scroll.js"></script>
+<link rel="stylesheet" href="/jl-forms.css?v=20261117">
 </head>
 <body>
 
@@ -77,6 +78,69 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 <p class="post-meta">Jonathan Lopez, Woodland Hills Realtor | Jim Sandoval Group | CA DRE #02282844</p>
 
 <p>Selling a home in Woodland Hills comes down to one thing more than any other: whether the price on day one actually matches what buyers are proving comparable homes are worth. Here's what's really happening in the market right now, and how Jonathan approaches getting a home sold at the right price without the guesswork.</p>
+
+<!-- jl home-value block (2-step: name + email, then optional address) -->
+<section class="jl-tool jl-band jl-band--dark" id="home-value" aria-labelledby="jl-hv-title">
+  <div class="jl-wrap">
+    <p class="jl-eyebrow">Free home value</p>
+    <h2 class="jl-title" id="jl-hv-title">What's your <em>Woodland Hills</em> home worth?</h2>
+    <p class="jl-lede">A personal estimate from your local agent, built from real recent sales near you. <strong>Not a Zestimate.</strong></p>
+
+    <div class="jl-card">
+      <form data-jl-form data-jl-mode="two-step"
+            data-placement="auto"
+            data-lead-type="Home Value Request"
+            data-source="Website - Home Value"
+            data-subject="Home value request"
+            novalidate>
+        <textarea name="Message" class="jl-fub-note" readonly tabindex="-1" aria-hidden="true" autocomplete="off"></textarea>
+        <div class="jl-progress" aria-hidden="true"><span></span></div>
+
+        <!-- Step 1: name + email -->
+        <fieldset class="jl-step" data-step="1">
+          <legend class="jl-step-title">Where should I send your estimate?</legend>
+          <div class="jl-field">
+            <label for="jl-hv-name">Full name *</label>
+            <input class="jl-input" id="jl-hv-name" name="Full Name" type="text" autocomplete="name" placeholder="Your full name" required>
+          </div>
+          <div class="jl-field">
+            <label for="jl-hv-email">Email address *</label>
+            <input class="jl-input" id="jl-hv-email" name="Email Address" type="email" autocomplete="email" placeholder="you@email.com" required>
+          </div>
+          <button class="jl-btn" type="submit">Get My Home Value</button>
+          <p class="jl-note"><a href="/privacy-policy.html">Privacy Policy</a></p>
+        </fieldset>
+
+        <!-- Step 2: optional address -->
+        <fieldset class="jl-step" data-step="2" hidden>
+          <legend class="jl-hp">Optional: add your address</legend>
+          <p class="jl-thanks" data-jl-thanks>Thanks! Your request is in.</p>
+          <p class="jl-step-title">Want a more accurate value? <span class="jl-opt">(optional)</span></p>
+          <div class="jl-field">
+            <label for="jl-hv-address">Property address <span class="jl-opt">(optional)</span></label>
+            <input class="jl-input" id="jl-hv-address" name="Property Address" type="text" autocomplete="street-address" placeholder="1234 Your St, Woodland Hills, CA 91367">
+          </div>
+          <div class="jl-actions">
+            <button class="jl-btn" type="button" data-jl-addr>Send My Address</button>
+            <button class="jl-link-btn" type="button" data-jl-skip>Skip, I'm all set</button>
+          </div>
+        </fieldset>
+
+        <input type="checkbox" name="botcheck" class="jl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="jl-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="jl-success" hidden>
+        <h3>Got it<span data-first-name></span>.</h3>
+        <p>I'll personally email your home's estimated value.</p>
+        <p>Questions in the meantime? Call or text <a href="tel:8189347576">(818) 934-7576</a>.</p>
+      </div>
+    </div>
+
+    <p class="jl-note jl-note--dark">If your property is currently listed, please disregard.</p>
+  </div>
+</section>
+
 
 <h2>What's Actually Happening in the Market</h2>
 <ul>
@@ -130,5 +194,6 @@ function initFubPixelOnEvent(e){initFubPixel(),e.currentTarget.removeEventListen
 <footer class="footer"><div class="wrap"><div>Jonathan Lopez, Woodland Hills Realtor | Jim Sandoval Group | CA DRE #02282844<br>(818) 934-7576</div><div class="footer-links"><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy Policy</a></div></div></footer>
 
 <script defer src="/assets/nav.js?v=20261031"></script>
+<script src="/jl-forms.js?v=20261117" defer></script>
 </body>
 </html>
