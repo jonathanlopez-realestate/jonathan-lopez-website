@@ -98,7 +98,8 @@
       <h3>Want a more accurate home value?</h3>
       <p>Optional: add your address and Jonathan will include a value note by email.</p>
       <div class="form-field"><label for="addr">Add your address <span class="sg-opt">(optional)</span></label><input type="text" id="addr" name="Property Address" placeholder="1234 Your St, City, CA" autocomplete="street-address"></div>
-      <button type="button" class="btn btn-dark" id="sg-addr-send" style="width:100%">Send My Address</button>
+      <div class="form-field"><label for="sg-phone">Best number to reach you <span class="sg-opt">(optional)</span></label><input type="tel" id="sg-phone" name="Phone" inputmode="tel" autocomplete="tel" placeholder="(818) 555-1234"></div>
+      <button type="button" class="btn btn-dark" id="sg-addr-send" style="width:100%">Send My Details</button>
       <button type="button" class="sg-skip" id="sg-skip">Skip, I'm all set</button>
     </div>
     <p class="sg-addr-done" id="sg-addr-done" hidden style="margin:18px 0 0;font-weight:700;color:var(--gold-ink)">Got it. Jonathan will email your value note.</p>
@@ -150,16 +151,18 @@ f.addEventListener('submit',function(e){e.preventDefault();
   var fn=nm.value.trim().split(/\s+/)[0];$('sg-thanks').textContent=fn?'Thanks, '+fn+'! Your guide is ready.':'Your guide is ready!';
   b.disabled=false;b.textContent='Send Me the Guide';go(2);
  }).catch(function(){b.disabled=false;b.textContent='Send Me the Guide';err.innerHTML=ERR;err.style.display='block'})});
-$('sg-addr-send').addEventListener('click',function(){var a=$('addr').value.trim();if(!a){$('addr').focus();return}
+$('sg-addr-send').addEventListener('click',function(){var a=$('addr').value.trim(),ph=$('sg-phone').value.trim();if(!a&&!ph){$('addr').focus();return}
  var b=this;b.disabled=true;b.textContent='Sending...';
- $('fub-note').value='Sellers Guide - Social - Address - '+a;
- var o=base('Sellers Guide - Social - Address',"Seller's Guide address added – Social");o['Property Address']=a;o.Message=$('fub-note').value;
+ var what=a&&ph?'Address + Phone':a?'Address':'Phone';
+ $('fub-note').value='Sellers Guide - Social - '+what+(a?' - '+a:'')+(ph?' - Phone: '+ph:'');
+ var o=base('Sellers Guide - Social - '+what,"Seller's Guide "+(a&&ph?'address and phone':a?'address':'phone')+" added – Social");if(a)o['Property Address']=a;if(ph)o.Phone=ph;o.Message=$('fub-note').value;
  send(o).then(function(){
   // Re-post full record (name, email, address) to the FUB pixel so it matches the same lead; our submit handler returns early on step 2.
   try{f.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}))}catch(_){}
   if(PREVIEW)window.__fubRepost=1;
+  if(!a)$('sg-addr-done').textContent='Got it, thank you.';
   $('sg-addr-box').hidden=true;$('sg-addr-done').hidden=false;
- }).catch(function(){b.disabled=false;b.textContent='Send My Address';err.innerHTML=ERR;err.style.display='block'})});
+ }).catch(function(){b.disabled=false;b.textContent='Send My Details';err.innerHTML=ERR;err.style.display='block'})});
 $('sg-skip').addEventListener('click',function(){$('sg-addr-box').hidden=true});
 if(PREVIEW&&/[?&]step=2\b/.test(location.search)){go(2)}
 })();</script>

@@ -759,8 +759,12 @@ form[data-dir="back"] .step:not([hidden]){animation-name:stepBack}
               <label for="hv-zip">ZIP</label>
             </div>
           </div>
+          <div class="f">
+            <input class="in" id="hv-phone" name="Phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" ">
+            <label for="hv-phone">Best number to reach you (optional)</label>
+          </div>
           <div class="actions">
-            <button class="btn" type="submit">Send my address <span class="arrow" aria-hidden="true"></span></button>
+            <button class="btn" type="submit">Send my details <span class="arrow" aria-hidden="true"></span></button>
             <button class="text-btn" type="button" data-skip-submit>Skip, I’m all set</button>
           </div>
         </fieldset>
@@ -1138,7 +1142,7 @@ form[data-dir="back"] .step:not([hidden]){animation-name:stepBack}
       if(i>0){var first=steps[i].querySelector("input:not([type=hidden]):not([type=checkbox])");if(first)setTimeout(function(){first.focus({preventScroll:true})},reduce?0:280)}}
     function valid(i){var fs=$$("input:not([type=hidden]):not([name=botcheck])",steps[i]);for(var k=0;k<fs.length;k++){if(fs[k].required&&!fs[k].value.trim())fs[k].value="";if(!fs[k].checkValidity()){fs[k].reportValidity();return false}}return true}
     function val(n){var el=form.querySelector("[name='"+n+"']");return el?(el.value||"").trim():""}
-    function data(){return{"Full Name":val("Full Name"),"Email Address":val("Email Address"),"Property Address":val("Property Address"),City:val("City"),ZIP:val("ZIP")}}
+    function data(){return{"Full Name":val("Full Name"),"Email Address":val("Email Address"),"Property Address":val("Property Address"),City:val("City"),ZIP:val("ZIP"),Phone:val("Phone")}}
     function first(d){return (d["Full Name"].split(/\s+/)[0])||""}
     function full(d){var t=[d.City,d.ZIP?"CA "+d.ZIP:""].filter(Boolean).join(", ");return d["Property Address"]?(t?d["Property Address"]+", "+t:d["Property Address"]):""}
     show(0);
@@ -1158,7 +1162,7 @@ form[data-dir="back"] .step:not([hidden]){animation-name:stepBack}
 
     form.addEventListener("click",function(e){
       var t=e.target.closest("button");if(!t||!form.contains(t))return;
-      if(t.hasAttribute("data-skip-submit")){e.preventDefault();["Property Address","City","ZIP"].forEach(function(n){var f=form.querySelector("[name='"+n+"']");if(f)f.value=""});finish(data())}
+      if(t.hasAttribute("data-skip-submit")){e.preventDefault();["Property Address","City","ZIP","Phone"].forEach(function(n){var f=form.querySelector("[name='"+n+"']");if(f)f.value=""});finish(data())}
     });
     form.addEventListener("submit",function(e){
       e.preventDefault();
@@ -1166,13 +1170,14 @@ form[data-dir="back"] .step:not([hidden]){animation-name:stepBack}
       if(!valid(cur)){e.stopImmediatePropagation();return}
       var bot=form.querySelector("[name=botcheck]");if(bot&&bot.checked)return;
       var d=data(),stage2=cur===1;
-      if(stage2&&!d["Property Address"]){finish(d);return}
-      var lead=(form.getAttribute("data-lead-type")||"Website lead")+(stage2?" - Address":"");
-      var parts=[source,lead];if(stage2)parts.push(full(d),"Address added");
+      if(stage2&&!d["Property Address"]&&!d.Phone){finish(d);return}
+      var hasA=stage2&&!!d["Property Address"],hasP=stage2&&!!d.Phone;
+      var lead=(form.getAttribute("data-lead-type")||"Website lead")+(hasA&&hasP?" - Address + Phone":hasA?" - Address":hasP?" - Phone":"");
+      var parts=[source,lead];if(hasA)parts.push(full(d));if(hasP)parts.push("Phone: "+d.Phone);if(stage2)parts.push(hasA&&hasP?"Address and phone added":hasA?"Address added":"Phone added");
       var msg=parts.join(" - ");if(note)note.value=msg;   // read by the FUB pixel on this same submit
-      var out={access_key:CONFIG.accessKey,from_name:CONFIG.fromName,subject:(form.getAttribute("data-subject")||lead)+(stage2?" - address added":"")+" | src: "+src,
+      var out={access_key:CONFIG.accessKey,from_name:CONFIG.fromName,subject:(form.getAttribute("data-subject")||lead)+(hasA&&hasP?" - address and phone added":hasA?" - address added":hasP?" - phone added":"")+" | src: "+src,
         "Full Name":d["Full Name"],"Email Address":d["Email Address"],source:source,src:src,placement:placement,page:location.pathname,lead_type:lead,Message:msg};
-      if(stage2){out["Property Address"]=d["Property Address"];out.City=d.City;out.ZIP=d.ZIP}
+      if(stage2){out["Property Address"]=d["Property Address"];out.City=d.City;out.ZIP=d.ZIP;out.Phone=d.Phone}
       var btns=$$("button",form),status=$(".status",form);
       form.__busy=true;btns.forEach(function(b){b.disabled=true});if(status){status.className="status";status.textContent="Sending…"}
       post(out).then(function(){
