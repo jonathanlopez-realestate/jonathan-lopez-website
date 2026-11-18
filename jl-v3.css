@@ -1,0 +1,40 @@
+/* v3 look for /street-report and /ask: Bodoni Moda + Jost, navy / ivory / gold.
+   Only re-points the jl-forms.css tokens; form markup and behavior are unchanged. */
+.site-head.site-head--solid{position:sticky;top:0;background:var(--night);box-shadow:0 1px 0 var(--hair-light)}
+.site-head.site-head--solid .wrap{height:80px}
+.jl-tool{
+  --jl-serif:"Bodoni Moda","Bodoni MT",Didot,serif;
+  --jl-sans:Jost,Arial,sans-serif;
+  --jl-bg:var(--ivory);
+  --jl-bg-raised:#fbf9f5;
+  --jl-fg:var(--text);
+  --jl-fg-soft:var(--post-body);
+  --jl-muted:var(--muted);
+  --jl-hair:rgba(41,51,58,.16);
+  --jl-hair-strong:rgba(41,51,58,.34);
+  --jl-accent:var(--gold-ink);
+  --jl-accent-soft:rgba(180,148,97,.16);
+  --jl-gutter:var(--gutter);
+}
+.jl-tool--dark{
+  --jl-bg:var(--night);--jl-bg-raised:var(--night2);--jl-fg:var(--ivory);--jl-fg-soft:rgba(246,243,237,.78);
+  --jl-muted:rgba(246,243,237,.6);--jl-hair:rgba(246,243,237,.18);--jl-hair-strong:rgba(246,243,237,.38);
+  --jl-accent:var(--gold-light);--jl-accent-soft:rgba(216,193,155,.14);
+}
+/* Bodoni Moda is set at 400 (no 300 cut), slightly tighter than Cormorant */
+.jl-tool .jl-display,.jl-tool .jl-success h3,.jl-tool .jl-doc-title{font-weight:400;letter-spacing:-.015em}
+.jl-tool .jl-display{font-size:clamp(38px,6.6vw,76px)}
+.jl-page{padding-top:clamp(56px,9vw,120px)}
+@media (min-width:900px){.jl-sticky{top:112px}}
+/* Fixed/sticky header never covers a heading or field when jumping or focusing */
+.jl-tool .jl-display,.jl-tool .jl-frame,.jl-tool .jl-success,.jl-in{scroll-margin-top:100px}
+/* Phones: more room between the small floated labels and typed values (same fix as the home page) */
+@media (max-width:559px){
+  .jl-f{padding-top:24px;margin-bottom:34px}
+  .jl-f .jl-in{padding-top:16px}
+  .jl-f>label{top:41px}
+  .jl-f--serif>label{top:44px}
+  .jl-f--area{padding-top:26px}
+  .jl-f--area>textarea.jl-in{padding-top:14px}
+  .jl-f--area>label{top:0}
+}
