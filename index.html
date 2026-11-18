@@ -400,6 +400,10 @@ a{color:inherit}
 .js .hero .fade:nth-child(2){transition-delay:.12s}.js .hero .fade:nth-child(3){transition-delay:.24s}.js .hero .fade:nth-child(4){transition-delay:.36s}
 .js .hero .scroll-cue{opacity:0;transition:opacity 1.2s ease .6s}
 .js .hero.text-in .scroll-cue{opacity:1}
+/* While the fly-in plays, copy + shade are tied to the video clock (JS sets --f / --hs each frame) */
+.js .hero.is-scrub::after{transition:opacity .2s linear;opacity:var(--hs,.4)}
+.js .hero.is-scrub .fade,.js .hero.is-scrub .scroll-cue{transition:opacity .2s linear,transform .2s linear;transition-delay:0s;opacity:var(--f,0);transform:translateY(calc((1 - var(--f,0)) * 22px))}
+.js .hero.is-scrub .scroll-cue{transform:none}
 .scroll-cue{position:absolute;z-index:2;left:50%;bottom:0;width:1px;height:64px;background:rgba(246,243,237,.25);overflow:hidden}
 .scroll-cue::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--gold-light);animation:cue 2.6s var(--ease) infinite}
 @keyframes cue{to{top:100%}}
@@ -973,7 +977,7 @@ form[data-dir="back"] .step:not([hidden]){animation-name:stepBack}
   var yr=$("#yr"); if(yr) yr.textContent=new Date().getFullYear();
 
   /* ---------- Hero fly-in video ----------
-     Plays once (muted, inline). ~1.5s before the end the copy rises in.
+     Plays once (muted, inline). From ~1s in, the copy fades up and the shade deepens with the video (full by ~6.5s).
      On 'ended' the final frame (hero-flyin-end.jpg) crossfades in over 0.6s and drifts 1.0 -> 1.05.
      Reduced motion, Data Saver, autoplay blocked or a load error: end frame + copy shown right away. */
   (function(){
@@ -1002,7 +1006,26 @@ form[data-dir="back"] .step:not([hidden]){animation-name:stepBack}
     if(poster)v.setAttribute("poster",poster);
     v.src=mobile?v.getAttribute("data-src-mobile"):v.getAttribute("data-src-desktop");
     v.addEventListener("error",fallback);
+    // Copy starts ~1s into the fly-in and fades up line by line; the shade behind it deepens with it.
+    // Fully legible by ~6.5s (video is ~10s). Driven by currentTime so it tracks the video exactly.
+    var parts=$$(".hero .fade"),cue=$(".hero .scroll-cue"),raf=0;
+    var spans=[[1.0,4.2],[1.7,5.2],[2.4,6.0],[3.0,6.5]];
+    function ss(a,b,t){var x=Math.min(1,Math.max(0,(t-a)/(b-a)));return x*x*(3-2*x)}
+    function frame(){
+      raf=0;if(textShown||settled)return;
+      var t=v.currentTime||0;
+      h.style.setProperty("--hs",(0.4+0.6*ss(0.3,6.5,t)).toFixed(3));
+      parts.forEach(function(el,i){var sp=spans[Math.min(i,spans.length-1)];el.style.setProperty("--f",ss(sp[0],sp[1],t).toFixed(3))});
+      if(cue)cue.style.setProperty("--f",ss(5,7,t).toFixed(3));
+      if(t>=6.6){showText();return}
+      raf=requestAnimationFrame(frame);
+    }
+    function startScrub(){if(textShown||settled)return;h.classList.add("is-scrub");if(!raf)raf=requestAnimationFrame(frame)}
+    var baseShow=showText;
+    showText=function(){if(raf){cancelAnimationFrame(raf);raf=0}baseShow();h.classList.remove("is-scrub")};
+    v.addEventListener("playing",startScrub);
     v.addEventListener("timeupdate",function(){
+      if(!raf&&!textShown&&!v.paused)startScrub();
       if(v.duration&&isFinite(v.duration)&&v.duration-v.currentTime<=1.5)showText();
     });
     v.addEventListener("ended",function(){settle(true)});
